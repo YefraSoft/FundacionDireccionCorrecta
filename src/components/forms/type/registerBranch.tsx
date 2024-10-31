@@ -12,39 +12,31 @@ export default function RegisterBranch() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [rol, setRol] = useState<string>("");
-  const iys = ["Administrador", "Gerente", "Recepcionista", "Chofer"];
   return (
     <form
       className="flex flex-col my-2 w-64"
       onSubmit={(e: React.FormEvent) =>
-        handleSubmitReg(e, user, password, email, rol, router)
+        handleSubmitReg(e, user, password, email, "branch", router)
       }
     >
-      {/*USER */}
+      {/*ROL*/}
       <Combobox
-        items={iys}
         placeholder="Seleccione el tipo de cuenta"
-        selectedItem={rol}
-        setSelectedItem={setRol}
+        selectedItem={user}
+        setSelectedItem={setUser}
+        attendants={attendantsBranchs}
       />
+
       {/*PASSWORD */}
       <InputTypePass password={password} setPassword={setPassword} />
       {/*EMAIL*/}
       <InputTypeEmail email={email} setEmail={setEmail} />
-      {/*ROL*/}
-      <Combobox
-        placeholder="Seleccione el tipo de cuenta"
-        selectedItem={rol}
-        setSelectedItem={setRol}
-        attendants={attendantsBranchs}
-      />
       {/*BOTTON */}
       <InputTypeButton
         user={user}
         password={password}
         email={email}
-        rol={rol}
+        rol={"branch"}
         lavel="Registrar"
       />
     </form>

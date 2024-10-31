@@ -91,8 +91,8 @@ export default function ComboBox({
               ))}
             {attendantsList &&
               attendantsList.map((branch) => (
-                <div key={branch.branchID} className="flex flex-col mt-2">
-                  <span className="font-bold text-sm text-gray-700">
+                <div key={branch.branchID} className="flex flex-col p-1 pl-2">
+                  <span className="font-bold text-sm text-gray-700 mb-1">
                     {branch.branchName}
                   </span>
                   {branch.attendants.map((attendant, index) => (

@@ -1,7 +1,6 @@
 import { ProductBranch } from "@/utils/fakeData";
 import BranchCard from "../cards/branchCard";
 import ProductList from "../cards/productCard";
-import RegisterForm from "../forms/type/register";
 import RegisterBranch from "../forms/type/registerBranch";
 
 export default function DashbardCompany() {
