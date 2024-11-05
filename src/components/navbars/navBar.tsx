@@ -25,7 +25,7 @@ export default function NavBar() {
                 width={30}
                 height={30}
               />
-              <span className="text-2xl font-bold text-patina-50 hover:text-patina-500 transition-colors duration-300">
+              <span className="text-2xl font-bold text-patina-50 hover:text-patina-300 transition-colors duration-300">
                 Direccion Correcta
               </span>
             </Link>

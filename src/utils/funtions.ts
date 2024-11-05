@@ -12,6 +12,11 @@ export function calcEarnings(branch: branchData): number {
     .filter((payRequest) => payRequest.status === "Aprobado") // Filtrar solo las solicitudes aprobadas
     .reduce((total, request) => total + request.amount, 0); // Sumar los montos de las solicitudes aprobadas
 }
+export function getVisibleIconsCount(containerWidth: number) {
+  if (containerWidth < 640) return 5;
+  if (containerWidth < 1024) return 7;
+  return 9;
+}
 
 //VARIANTS
 export function leftRighVariants(index: number) {

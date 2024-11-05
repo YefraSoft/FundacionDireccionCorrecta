@@ -353,3 +353,15 @@ export const attendantsBranchs: attendantsBranch[] = [
     ],
   },
 ];
+
+export const icons = [
+  { icon: "http://localhost:3000/images/bkg.png" },
+  { icon: "http://localhost:3000/images/coppel.png" },
+  { icon: "http://localhost:3000/images/dominos.png" },
+  { icon: "http://localhost:3000/images/flexy.png" },
+  { icon: "http://localhost:3000/images/itka.jpg" },
+  { icon: "http://localhost:3000/images/liverpool.png" },
+  { icon: "http://localhost:3000/images/pizaHud.jpeg" },
+  { icon: "http://localhost:3000/images/rpc.webp" },
+  { icon: "http://localhost:3000/images/vvvW.png" },
+];

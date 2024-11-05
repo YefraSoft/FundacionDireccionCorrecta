@@ -26,7 +26,6 @@ export default function RegisterBranch() {
         setSelectedItem={setUser}
         attendants={attendantsBranchs}
       />
-
       {/*PASSWORD */}
       <InputTypePass password={password} setPassword={setPassword} />
       {/*EMAIL*/}

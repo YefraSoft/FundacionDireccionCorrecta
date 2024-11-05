@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
-        pathname: "/yefrasoft/image/upload/**", // Ruta base para permitir cualquier imagen en este subdirectorio
+        pathname: "/yefrasoft/image/upload/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        pathname: "/**",
       },
     ],
   },
