@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mercadopago/sdk-react": "^0.0.19",
     "axios": "^1.7.7",
     "direccion_correcta_v2": "file:",
     "framer-motion": "^11.11.10",
