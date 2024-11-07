@@ -9,7 +9,7 @@ import { Info, CircleCheckBig, CircleAlert } from "lucide-react";
 import ButtonIcon from "../menus/buttonIcon";
 
 export default function BranchCard() {
-  const [activeBranch, setActiveBranch] = useState<branchData>();
+  const [activeBranch, setActiveBranch] = useState<branchData | null>();
   return (
     <div className="relative pb-1">
       <span className="relative text-havelockblue-700 font-semibold text-lg text-center">
@@ -38,7 +38,7 @@ export default function BranchCard() {
       duration-500 hover:shadow active:scale-95"
           >
             <div className="flex justify-between px-1 sm:px-5 items-center">
-              <span className="w-full" onClick={() => setActiveBranch(branch)}>
+              <span className="w-full" onClick={() => setActiveBranch(activeBranch === branch ? null : branch)}>
                 {branch.sucursal}
               </span>
               <div className="flex gap-3 items-center mt-1">

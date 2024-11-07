@@ -1,3 +1,4 @@
+"use client"
 import { ProductBranch } from "@/utils/fakeData";
 import BranchCard from "../cards/branchCard";
 import ProductList from "../cards/productCard";

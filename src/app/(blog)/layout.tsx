@@ -1,6 +1,6 @@
-import { Ubuntu } from "next/font/google";
+import { Monda } from "next/font/google";
 import Navbar from "@/components/navbars/navBar";
-const monserrat = Ubuntu({ subsets: ["latin"], weight: "400" });
+const monserrat = Monda({ subsets: ["latin"] });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

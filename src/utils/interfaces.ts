@@ -52,9 +52,9 @@ export interface comboProps {
   name: string;
 }
 export interface dashboardProps {
-  params: {
+  params: Promise<{
     rol: string;
-  };
+  }>;
 }
 export interface navDashProps {
   rol: string;
