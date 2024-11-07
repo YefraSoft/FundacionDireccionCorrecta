@@ -1,5 +1,10 @@
 import { staticAssets } from "@/assets/staticAssets";
-import { attendantsBranch, branchsProducts, dataPost } from "./interfaces";
+import {
+  asideDonation,
+  attendantsBranch,
+  branchsProducts,
+  dataPost,
+} from "./interfaces";
 
 export const branchesData = [
   {
@@ -365,3 +370,10 @@ export const icons = [
   { icon: "http://localhost:3000/images/rpc.webp" },
   { icon: "http://localhost:3000/images/vvvW.png" },
 ];
+
+export const asideDonationData: asideDonation = {
+  donorGoal: 100000,
+  donorProyet: 1000,
+  totalFondsToday: 1500000,
+  totalFonds: 1500000,
+};

@@ -138,3 +138,9 @@ export interface dataAthResponse {
   isVerified: string;
   isVeryfy: string;
 }
+export interface asideDonation {
+  donorGoal: number;
+  donorProyet: number;
+  totalFondsToday: number;
+  totalFonds: number;
+}
