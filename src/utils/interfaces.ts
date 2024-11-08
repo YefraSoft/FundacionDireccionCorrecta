@@ -63,6 +63,11 @@ export interface buttonProps {
   label?: string;
   icon: string;
   onClick?: () => void;
+  variants?: {
+    bgColror?: string;
+    textColror?: string;
+    hoverColor?: string;
+  };
 }
 export interface linkProps {
   menuItems: {
@@ -113,6 +118,14 @@ export interface ProductListProps {
 export interface registerFormProps {
   roles?: string | string[];
   placeholder?: string;
+}
+export interface dashBoarContext {
+  userRol: string;
+  setUserRol: (rol: string) => void;
+}
+export interface overFlowContext {
+  isOpen: boolean;
+  setOpen: (value: boolean) => void;
 }
 
 //Object Interfaces

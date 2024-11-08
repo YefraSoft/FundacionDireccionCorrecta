@@ -9,6 +9,7 @@ export const staticAssets = {
     micros:
       "https://res.cloudinary.com/yefrasoft/image/upload/v1728613738/windIc_sugu5q.svg",
     mac: "https://res.cloudinary.com/yefrasoft/image/upload/v1728613738/appleIc_briyxb.svg",
+    logo: "https://res.cloudinary.com/yefrasoft/image/upload/v1731033576/LogoF_ygzw3y.svg",
   },
   images: {
     colaborationHands:
@@ -44,7 +45,7 @@ export const pagesIndex = [
   },
   {
     title: "Blog",
-    url: "/",
+    url: "/blog",
   },
   {
     title: "Conocenos",

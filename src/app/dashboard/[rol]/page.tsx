@@ -1,17 +1,23 @@
+"use client";
 import DashbardCompany from "@/components/dashboards/companyDash";
-import NavDashboard from "@/components/navbars/navDashboard";
+import { DashbardHook } from "@/components/providers/Hook";
 import { dashboardProps } from "@/utils/interfaces";
 import { notFound } from "next/navigation";
-import React from "react";
+import { useEffect, use } from "react";
 
-export default async function Dashbard({ params }: dashboardProps) {
-  const { rol } = await params;
+export default function Dashbard({ params }: dashboardProps) {
+  const { rol } = use(params);
+  const { setUserRol } = DashbardHook();
+
+  useEffect(() => {
+    setUserRol(rol);
+  });
+
   if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
     notFound();
   }
   return (
     <div className="">
-      <NavDashboard rol={rol} />
       {rol === "sponsor" && <div />}
       {rol === "branch" && <div />}
       {rol === "company" && <DashbardCompany />}

@@ -1,17 +1,13 @@
 import { Monda } from "next/font/google";
 import DashboardProvider from "@/components/providers/dashboardProvider";
-import NavDashboard from "@/components/navbars/navDashboard";
+import NavBar from "@/components/navbars/navBar";
 const monserrat = Monda({ subsets: ["latin"] });
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className={`${monserrat.className} antialiased`}>
       <DashboardProvider>
-        <NavDashboard />
+        <NavBar />
         {children}
       </DashboardProvider>
     </main>

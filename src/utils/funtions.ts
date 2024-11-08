@@ -51,6 +51,15 @@ export const descriptionVariants = {
     },
   },
 };
+export const buttonsVariantsMP = {
+  bgColror: "bg-merPago",
+  textColror: "text-merPago-light mt-2",
+};
+export const buttonsVariantsExit = {
+  bgColror: "bg-rose-500",
+  textColror: "text-merPago-light",
+  hoverColor: "hover:bg-rose-600",
+};
 
 // Validations
 export const validateNewPassword = (

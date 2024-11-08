@@ -374,6 +374,6 @@ export const icons = [
 export const asideDonationData: asideDonation = {
   donorGoal: 100000,
   donorProyet: 1000,
-  totalFondsToday: 1500000,
+  totalFondsToday: 100000,
   totalFonds: 1500000,
 };

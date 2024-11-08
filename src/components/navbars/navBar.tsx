@@ -20,14 +20,17 @@ export default function NavBar() {
           >
             <Link href="/" className="flex items-center">
               <Image
-                src={staticAssets.icons.sun}
+                src={staticAssets.icons.logo}
                 alt="Logo"
-                width={30}
-                height={30}
+                width={45}
+                height={45}
+                className="mr-2"
               />
-              <span className="text-2xl font-bold text-patina-50 hover:text-patina-300 transition-colors duration-300">
-                Direccion Correcta
+
+              <span className="text-lg font-bold text-patina-50 hover:text-xl transition-all duration-300">
+                Fundacion Direccion Correcta
               </span>
+              <span></span>
             </Link>
           </motion.div>
           <div className="hidden md:block">

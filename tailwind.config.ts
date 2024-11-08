@@ -48,6 +48,11 @@ const config: Config = {
           900: "#283953",
           950: "#1a2437",
         },
+        merPago: {
+          light: "#fafafa",
+          DEFAULT: "#4fc3f7",
+          dark: "#1a237e",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
