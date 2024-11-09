@@ -1,7 +1,8 @@
 import { buttonsVariantsExit, buttonsVariantsMP } from "@/utils/funtions";
 import ButtonIcon from "./buttonIcon";
+import { overFlowProps } from "@/utils/interfaces";
 
-export default function DonationWindow() {
+export default function DonationWindow({isOpen}:overFlowProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm z-30 px-16 py-20 w-dvw">
       <div className="flex flex-col items-center justify-center w-full md:h-full rounded-3xl shadow-lg">

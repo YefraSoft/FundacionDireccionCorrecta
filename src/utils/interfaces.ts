@@ -51,6 +51,9 @@ export interface comboProps {
   items: string[];
   name: string;
 }
+export interface overFlowProps {
+  setOpen?: React.Dispatch<React.SetStateAction<string>>;
+}
 export interface dashboardProps {
   params: Promise<{
     rol: string;
@@ -63,6 +66,7 @@ export interface buttonProps {
   label?: string;
   icon: string;
   onClick?: () => void;
+  setOpen?: React.Dispatch<React.SetStateAction<string>>;
   variants?: {
     bgColror?: string;
     textColror?: string;
