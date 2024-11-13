@@ -3,11 +3,11 @@ import { asideDonationData } from "@/utils/fakeData";
 import { useEffect, useState } from "react";
 import ButtonIcon from "./buttonIcon";
 import DonationWindow from "./donationWindow";
-import OverFlowProvider from "../providers/overFlowProvider";
-import { overFlowHook } from "../providers/Hook";
+import { OverFlowHook } from "../providers/Hook";
 
 export default function AsideDonations() {
   const [porcent, setPorcent] = useState<number>(0);
+  const { isOpen, setOpen } = OverFlowHook();
   const buttonsVariants = {
     bgColror: "bg-patina-200",
     hoverColor: "hover:bg-patina-300",
@@ -51,11 +51,7 @@ export default function AsideDonations() {
             onClick={() => setOpen(!isOpen)}
           />
         </div>
-        {isOpen && (
-          <OverFlowProvider>
-            <DonationWindow />
-          </OverFlowProvider>
-        )}
+        {isOpen && <DonationWindow setOpen={setOpen} />}
       </div>
     </div>
   );
