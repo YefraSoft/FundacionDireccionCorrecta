@@ -1,7 +1,8 @@
 import { buttonsVariantsExit, buttonsVariantsMP } from "@/utils/funtions";
 import ButtonIcon from "./buttonIcon";
+import { openDonationOnverflow } from "@/utils/interfaces";
 
-export default function DonationWindow() {
+export default function DonationWindow({ setOpen }: openDonationOnverflow) {
   return (
     <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm z-30 px-16 py-20 w-dvw">
       <div className="flex flex-col items-center justify-center w-full md:h-full rounded-3xl shadow-lg">
@@ -9,9 +10,7 @@ export default function DonationWindow() {
           <ButtonIcon
             icon="exit"
             variants={buttonsVariantsExit}
-            onClick={() =>
-              alert("¡Gracias seguiremos trabajando por resultados!")
-            }
+            onClick={() => setOpen && setOpen(false)}
           />
         </div>
         <div className="bg-patina-50 p-8 rounded-3xl flex flex-col items-center z-40 lg:flex-row lg:space-x-10 lg:p-12">

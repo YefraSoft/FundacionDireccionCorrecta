@@ -127,6 +127,9 @@ export interface overFlowContext {
   isOpen: boolean;
   setOpen: (value: boolean) => void;
 }
+export interface openDonationOnverflow {
+  setOpen?: (value: boolean) => void;
+}
 
 //Object Interfaces
 export type validatePass = React.Dispatch<

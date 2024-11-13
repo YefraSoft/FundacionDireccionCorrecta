@@ -3,6 +3,7 @@ import AsideDonations from "@/components/menus/asideDonations";
 import AsideSponsors from "@/components/menus/asideSponsors";
 import CardOverflow from "@/components/menus/cardOverflow";
 import IconCards from "@/components/menus/IconCards";
+import OverFlowProvider from "@/components/providers/overFlowProvider";
 import { blogPosts } from "@/utils/fakeData";
 
 export default function BlogFeed() {
@@ -12,9 +13,11 @@ export default function BlogFeed() {
       <CardOverflow />
       <div className="bg-cello-50 mt-52 md:mt-24 lg:mt-96">
         <IconCards />
-        <div className="flex ">
+        <div className="flex flex-col">
           <div className="lg:w-1/4 bg-cello-200">
-            <AsideDonations />
+            <OverFlowProvider>
+              <AsideDonations />
+            </OverFlowProvider>
           </div>
           <div>
             <BlogCard posts={blogPosts} />

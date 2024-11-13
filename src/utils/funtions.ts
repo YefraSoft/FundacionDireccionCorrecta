@@ -54,11 +54,17 @@ export const descriptionVariants = {
 export const buttonsVariantsMP = {
   bgColror: "bg-merPago",
   textColror: "text-merPago-light mt-2",
+  hoverColor: "hover:bg-merPago-dark",
 };
 export const buttonsVariantsExit = {
   bgColror: "bg-rose-500",
   textColror: "text-merPago-light",
   hoverColor: "hover:bg-rose-600",
+};
+export const buttonsVariantsIndex = {
+  bgColror: "bg-patina-200",
+  textColror: "text-merPago-light mt-2",
+  hoverColor: "hover:bg-merPago-dark",
 };
 
 // Validations

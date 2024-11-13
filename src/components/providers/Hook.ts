@@ -10,7 +10,7 @@ export const DashbardHook = () => {
   return context;
 };
 
-export const overFlowHook = () => {
+export const OverFlowHook = () => {
   const context = useContext(overContext);
   if (!context) {
     throw new Error("overContext debe ser usado dentro de OverFlowProvider");
