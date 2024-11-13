@@ -1,6 +1,7 @@
 import { buttonsVariantsExit, buttonsVariantsMP } from "@/utils/funtions";
 import ButtonIcon from "./buttonIcon";
 import { openDonationOnverflow } from "@/utils/interfaces";
+import { overFlowProps } from "@/utils/interfaces";
 
 export default function DonationWindow({ setOpen }: openDonationOnverflow) {
   return (
