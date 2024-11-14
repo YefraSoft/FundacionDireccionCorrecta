@@ -143,10 +143,13 @@ CREATE TABLE audit (
 
 -- FONDOS
 CREATE TABLE funds (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, -- ID DE FONDOS
-    project_funds DECIMAL(30, 2), -- FONDOS PARA PROYECTOS
-    donation_funds DECIMAL(30, 2) -- FONDOS PARA DONACIONES
-    goal_amount DECIMAL(30, 2), -- META MENSUAL
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, -- ID de cada registro de fondos
+    project_funds DECIMAL(30, 2), -- Fondos acumulados para proyectos
+    donation_funds DECIMAL(30, 2), -- Fondos acumulados para donaciones
+    goal_amount_donation DECIMAL(30, 2), -- Meta mensual de donaciones
+    goal_amount_project DECIMAL(30, 2), -- Meta mensual de proyectos
+    current_amount_donation DECIMAL(30, 2), -- Monto actual de donaciones para el mes
+    current_amount_project DECIMAL(30, 2) -- Monto actual de proyectos para el mes
 );
 
 -- PRODUCTOS
