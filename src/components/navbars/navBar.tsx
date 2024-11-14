@@ -30,7 +30,6 @@ export default function NavBar() {
               <span className="text-lg font-bold text-patina-50 hover:text-xl transition-all duration-300">
                 Fundacion Direccion Correcta
               </span>
-              <span></span>
             </Link>
           </motion.div>
           <div className="hidden md:block">

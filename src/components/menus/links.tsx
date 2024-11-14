@@ -5,7 +5,11 @@ import Link from "next/link";
 
 export default function Links(props: linkProps) {
   return (
-    <div className="ml-10 flex items-baseline space-x-4">
+    <div
+      className={`ml-10 flex items-baseline space-x-4 ${
+        props.hoverColor && props.hoverColor
+      }`}
+    >
       {props.menuItems.map((item, index) => (
         <motion.div
           key={item.url}

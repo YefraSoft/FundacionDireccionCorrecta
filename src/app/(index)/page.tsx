@@ -5,9 +5,6 @@ import Footer from "@/components/navbars/footer";
 import { useState } from "react";
 import { benefitsFakeData } from "@/utils/fakeData";
 import DetailWindow from "@/components/menus/detailWindow";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { leftRighVariants } from "@/utils/funtions";
 
 export default function Index() {
   const [showDetail, setShowDetail] = useState<string | null>(null);
@@ -20,10 +17,6 @@ export default function Index() {
   const handleButtonClick = (detail: string) => {
     setShowDetail(detail);
   };
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
   return (
     <div>
       <Header />
@@ -33,47 +26,29 @@ export default function Index() {
             Porque unirse como <span className="italic">Compañia</span>
           </h2>
           {BenefitsCompapy.map((benefit) => (
-            <motion.div
+            <IndexCard
               key={benefit.id}
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={leftRighVariants(benefit.id)}
-            >
-              <IndexCard
-                key={benefit.id}
-                title={benefit.title}
-                description={benefit.description}
-                image={benefit.image}
-                bgImage={benefit.style}
-                button={{
-                  onClick: () => handleButtonClick(benefit.detail_description),
-                }}
-              />
-            </motion.div>
+              title={benefit.title}
+              description={benefit.description}
+              image={benefit.image}
+              button={{
+                onClick: () => handleButtonClick(benefit.detail_description),
+              }}
+            />
           ))}
           <h2 className="text-2xl font-semibold text-center my-6 col-span-1 md:col-span-2 lg:col-span-3">
             Porque unirse como <span className="italic">Donador</span>
           </h2>
           {BenefitsSponsor.map((benefit) => (
-            <motion.div
+            <IndexCard
               key={benefit.id}
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={leftRighVariants(benefit.id)}
-            >
-              <IndexCard
-                key={benefit.id}
-                title={benefit.title}
-                description={benefit.description}
-                image={benefit.image}
-                bgImage={benefit.style}
-                button={{
-                  onClick: () => handleButtonClick(benefit.detail_description),
-                }}
-              />
-            </motion.div>
+              title={benefit.title}
+              description={benefit.description}
+              image={benefit.image}
+              button={{
+                onClick: () => handleButtonClick(benefit.detail_description),
+              }}
+            />
           ))}
         </div>
         {showDetail && (

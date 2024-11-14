@@ -7,21 +7,20 @@ export default function IndexCard({
   description,
   image,
   button,
-  bgImage,
 }: IndexCardProps) {
   return (
     <div className="mb-5">
       <div
         className="absolute bg-patina-50 h-48 w-64 sm:h-52 sm:w-72 rounded-lg transform sm:-translate-x-1/4 translate-y-6 p-3 shadow-lg
-      hover:shadow-xl transition-all duration-300 text-patina-800"
+      hover:shadow-xl transition-all duration-300 text-patina-800 overflow-hidden"
       >
-        <Image
+        {/*<Image
           src={bgImage}
           alt={`image ${bgImage}`}
           width={200}
           height={100}
           className="absolute object-contain scale-125 h-48 w-full sm:h-52 sm:w-72 transform -translate-x-3 -translate-y-3 rotate-90 -z-10 overflow-hidden"
-        />
+        />*/}
         <h3 className="md:text-xl font-semibold mt-2 ">{title}</h3>
         <p className="text-sm mt-2 ">{description}</p>
 

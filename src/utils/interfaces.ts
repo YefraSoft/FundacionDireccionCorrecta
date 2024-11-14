@@ -147,7 +147,7 @@ export interface IndexCardProps {
   title: string;
   description: string;
   image: string;
-  bgImage: string;
+  bgImage?: string;
   button: { onClick: () => void };
 }
 export interface detailWindowProps {
