@@ -3,7 +3,10 @@ import { dashboardProps } from "@/utils/interfaces";
 import { notFound } from "next/navigation";
 import React from "react";
 
-
+export async function generateStaticParams() {
+  const roles = ["sponsor", "branch", "company"];
+  return roles.map((rol) => ({ rol }));
+}
 
 export default function Dashbard({ params }: dashboardProps) {
   const { rol } = React.use(params);
