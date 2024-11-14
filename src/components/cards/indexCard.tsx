@@ -1,7 +1,13 @@
+import { IndexCardProps } from "@/utils/interfaces";
 import Image from "next/image";
 import React from "react";
 
-export default function IndexCard({ title, content, image, actions }) {
+export default function IndexCard({
+  title,
+  content,
+  image,
+  variants,
+}: IndexCardProps) {
   return (
     <div className="bg-white shadow-lg rounded-lg p-4">
       {image && (
@@ -16,7 +22,7 @@ export default function IndexCard({ title, content, image, actions }) {
       <h3 className="text-xl font-semibold mt-2">{title}</h3>
       <p className="mt-2">{content}</p>
       <div className="mt-4 flex space-x-2">
-        {actions.map((action, index) => (
+        {variants.map((action, index) => (
           <button key={index} className={`p-2 rounded ${action.color}`}>
             {action.label}
           </button>

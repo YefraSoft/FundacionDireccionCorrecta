@@ -12,6 +12,10 @@ export default function Footer() {
         <a href="#" className="hover:text-cello-400">
           Link 3
         </a>
+        <span className="text-2xl text-red-500 font-bold">
+          BETA VERSION, Your se a code in this repo:{" "}
+          <a>https://github.com/YefraSoft/direccionCorrectav2</a>
+        </span>
       </div>
     </footer>
   );

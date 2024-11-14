@@ -134,6 +134,15 @@ export interface overFlowContext {
 export interface openDonationOnverflow {
   setOpen?: (value: boolean) => void;
 }
+export interface IndexCardProps {
+  title: string;
+  content: string;
+  image?: string; // La propiedad 'image' es opcional, ya que no siempre está presente.
+  variants: {
+    label: string;
+    color: string;
+  }[];
+}
 
 //Object Interfaces
 export type validatePass = React.Dispatch<

@@ -4,7 +4,7 @@ import Header from "@/components/menus/header";
 import Footer from "@/components/navbars/footer";
 
 export default function Index() {
-  const actions = [
+  const variants = [
     { label: "Ver más", color: "bg-blue-500 text-white" },
     { label: "Donar", color: "bg-green-500 text-white" },
   ];
@@ -20,19 +20,19 @@ export default function Index() {
             title="Beneficio 1"
             content="Descripción detallada del beneficio 1."
             image={staticAssets.images.KidMexican}
-            actions={actions}
+            variants={variants}
           />
           <IndexCard
             title="Beneficio 2"
             content="Descripción detallada del beneficio 2."
             image={staticAssets.images.KidMexican}
-            actions={actions}
+            variants={variants}
           />
           <IndexCard
             title="Beneficio 3"
             content="Descripción detallada del beneficio 3."
             image={staticAssets.images.KidMexican}
-            actions={actions}
+            variants={variants}
           />
         </div>
       </div>
