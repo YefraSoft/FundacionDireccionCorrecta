@@ -1,9 +1,7 @@
-"use client";
 import DashbardCompany from "@/components/dashboards/companyDash";
-import { DashbardHook } from "@/components/providers/Hook";
 import { dashboardProps } from "@/utils/interfaces";
 import { notFound } from "next/navigation";
-import { useEffect, use } from "react";
+import React from "react";
 
 export async function generateStaticParams() {
   const roles = ["sponsor", "branch", "company"];
@@ -11,15 +9,11 @@ export async function generateStaticParams() {
 }
 
 export default function Dashbard({ params }: dashboardProps) {
-  const { rol } = use(params);
-  const { setUserRol } = DashbardHook();
+  const { rol } = React.use(params);
 
-  useEffect(() => {
-    setUserRol(rol);
-    if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
-      notFound();
-    }
-  }, [rol, setUserRol]);
+  if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
+    notFound();
+  }
 
   return (
     <div className="">
