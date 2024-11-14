@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 // Configuración para GitHub Actions
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
+/*const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let assetPrefix = "";
 let basePath = "";
 
@@ -10,12 +10,12 @@ if (isGithubActions) {
   assetPrefix = `/${repo}/`;
   basePath = `/${repo}`;
 }
-
+*/
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  assetPrefix,
-  basePath,
-  output: "export",
+  //assetPrefix,
+  //basePath,
+  //output: "export",
   images: {
     remotePatterns: [
       {

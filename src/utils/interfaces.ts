@@ -134,14 +134,25 @@ export interface overFlowContext {
 export interface openDonationOnverflow {
   setOpen?: (value: boolean) => void;
 }
+export interface benefitData {
+  id: number;
+  title: string;
+  description: string;
+  detail_description: string;
+  image: string;
+  style: string;
+  for: "COMPANY" | "SPONSOR";
+}
 export interface IndexCardProps {
   title: string;
-  content: string;
-  image?: string; // La propiedad 'image' es opcional, ya que no siempre está presente.
-  variants: {
-    label: string;
-    color: string;
-  }[];
+  description: string;
+  image: string;
+  bgImage: string;
+  button: { onClick: () => void };
+}
+export interface detailWindowProps {
+  description: string;
+  button: { onClick: () => void };
 }
 
 //Object Interfaces

@@ -9,6 +9,9 @@ export const metadata = {
     "Plataforma de donaciones para personas de bajos recursos en Mexico.",
   robots: "index, follow",
   keywords: "donaciones",
+  icons: {
+    icon: ["/favicon.ico"],
+  },
 };
 
 export default function RootLayout({
@@ -18,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ubuntu.className} antialiased`}>
-        <main>
-          {children}
-        </main>
-      </body>
+      <body className={`${ubuntu.className} antialiased`}>{children}</body>
     </html>
   );
 }
