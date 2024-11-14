@@ -1,21 +1,12 @@
-"use client";
 import DashbardCompany from "@/components/dashboards/companyDash";
-import { DashbardHook } from "@/components/providers/Hook";
 import { dashboardProps } from "@/utils/interfaces";
-import { useRouter } from "next/navigation";
-import { useEffect, use } from "react";
+import { notFound } from "next/navigation";
 
-export default function Dashbard({ params }: dashboardProps) {
-  const { rol } = use(params);
-  const { setUserRol } = DashbardHook();
-  const router = useRouter();
-
-  useEffect(() => {
-    setUserRol(rol);
-    if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
-      router.push("/");
-    }
-  });
+export default async function Dashbard({ params }: dashboardProps) {
+  const { rol } = await params;
+  if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
+    notFound();
+  }
 
   return (
     <div className="">
