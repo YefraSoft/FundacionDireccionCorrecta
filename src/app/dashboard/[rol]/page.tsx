@@ -11,11 +11,11 @@ export default function Dashbard({ params }: dashboardProps) {
 
   useEffect(() => {
     setUserRol(rol);
+    if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
+      notFound();
+    }
   });
 
-  if (!rol || !["sponsor", "branch", "company"].includes(rol)) {
-    notFound();
-  }
   return (
     <div className="">
       {rol === "sponsor" && <div />}
