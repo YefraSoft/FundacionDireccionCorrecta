@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { staticAssets } from "@/assets/staticAssets";
 import MainForm from "@/components/forms/mainForm";
