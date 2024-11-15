@@ -1,5 +1,4 @@
 import { companyData } from "@/utils/fakeData";
-import ReportForm from "../forms/reportForm";
 import CompanyCard from "../cards/companyCard";
 import ButtonIcon from "./buttonIcon";
 import IconPrefit from "./icon";
