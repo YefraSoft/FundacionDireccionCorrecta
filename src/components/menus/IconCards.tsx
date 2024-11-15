@@ -41,7 +41,7 @@ export default function IconCards() {
   }, []);
 
   return (
-    <div className="flex flex-col mx-5 py-2">
+    <div className="flex flex-col mx-5 py-2 overflow-hidden">
       <h1 className="text-center text-2xl font-bold text-patina-500">
         Patrocinadores
       </h1>

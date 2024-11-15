@@ -40,15 +40,19 @@ export const staticAssets = {
 //export const metaTags = {};
 export const pagesIndex = [
   {
-    title: "Sumate",
-    url: "/landing",
-  },
-  {
     title: "Blog",
     url: "/blog",
   },
   {
     title: "Conocenos",
     url: "/about",
+  },
+  {
+    title: "Soporte",
+    url: "/support",
+  },
+  {
+    title: "Sumate",
+    url: "/landing",
   },
 ];

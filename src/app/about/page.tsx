@@ -1,4 +1,5 @@
-import Footer from "@/components/navbars/footer";
+
+import Link from "next/link";
 import React from "react";
 
 export default function AboutUs() {
@@ -79,7 +80,7 @@ export default function AboutUs() {
           <h3 className="text-2xl font-semibold text-patina-600 mb-6">
             Conoce a Nuestro Equipo
           </h3>
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-col lg:flex-row justify-center items-center space-y-3 lg:space-x-6">
             {/* Miembro 2 */}
             <div className="max-w-xs">
               <img
@@ -127,15 +128,19 @@ export default function AboutUs() {
             arrepentiras! ¿Necesitas ayuda? Contacta con nosotros y te ayudamos
             en tu proceso de registro. ¡Gracias por tu apoyo!
           </p>
-          <a
+          <Link
             href="/contact"
-            className="inline-block px-6 py-3 text-white bg-patina-600 hover:bg-indigo-700 rounded-lg transition duration-300"
+            className="inline-block mb-6 px-6 py-3 text-white bg-patina-600 hover:bg-patina-700 rounded-lg transition duration-300"
           >
             Contáctanos
-          </a>
+          </Link>
+        </section>
+        <section className="text-center">
+          <h3 className="text-2xl font-semibold text-patina-600 mb-6">
+            Preguntas frecuentes
+          </h3>
         </section>
       </div>
-      <Footer />
     </div>
   );
 }

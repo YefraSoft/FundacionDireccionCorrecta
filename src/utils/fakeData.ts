@@ -361,22 +361,24 @@ export const attendantsBranchs: attendantsBranch[] = [
 ];
 
 export const icons = [
-  { icon: "http://localhost:3000/images/bkg.png" },
-  { icon: "http://localhost:3000/images/coppel.png" },
-  { icon: "http://localhost:3000/images/dominos.png" },
-  { icon: "http://localhost:3000/images/flexy.png" },
-  { icon: "http://localhost:3000/images/itka.jpg" },
-  { icon: "http://localhost:3000/images/liverpool.png" },
-  { icon: "http://localhost:3000/images/pizaHud.jpeg" },
-  { icon: "http://localhost:3000/images/rpc.webp" },
-  { icon: "http://localhost:3000/images/vvvW.png" },
+  { icon: "/images/bkg.png" },
+  { icon: "/images/coppel.png" },
+  { icon: "/images/dominos.png" },
+  { icon: "/images/flexy.png" },
+  { icon: "/images/itka.jpg" },
+  { icon: "/images/liverpool.png" },
+  { icon: "/images/pizaHud.jpeg" },
+  { icon: "/images/rpc.webp" },
+  { icon: "/images/vvvW.png" },
 ];
 
 export const asideDonationData: asideDonation = {
-  donorGoal: 100000,
-  donorProyet: 1000,
-  totalFondsToday: 100000,
-  totalFonds: 1500000,
+  projectFunds: 50000.0,
+  donationFunds: 15000.75,
+  goalAmountDonation: 20000.0,
+  goalAmountProject: 60000.0,
+  currentAmountDonation: 12000.5,
+  currentAmountProject: 40000.0,
 };
 
 export const benefitsFakeData: benefitData[] = [
@@ -504,7 +506,8 @@ Al realizar donativos a la plataforma, las personas con actividad empresarial o 
   {
     id: 8,
     title: "Remuneración por adición de la plataforma",
-    description: "Gana una remuneración adicional al unirte a la plataforma y ayudar a expandir la comunidad.",
+    description:
+      "Gana una remuneración adicional al unirte a la plataforma y ayudar a expandir la comunidad.",
     detail_description: `
 ## Remuneración por recomendación
 
@@ -521,7 +524,8 @@ Si eres un patrocinador activo (persona con actividad empresarial o asalariada),
   {
     id: 9,
     title: "Ventajas fiscales para personas asalariadas",
-    description: "Accede a ventajas fiscales por tus donativos como persona asalariada.",
+    description:
+      "Accede a ventajas fiscales por tus donativos como persona asalariada.",
     detail_description: `
 ## Ley del Impuesto sobre la Renta para Personas Físicas
 
@@ -534,5 +538,49 @@ Las personas asalariadas también pueden beneficiarse de deducciones fiscales po
     image: staticAssets.images.KidMexican,
     style: staticAssets.background.bgBlue,
     for: "SPONSOR",
+  },
+];
+
+export const newsData = [
+  {
+    title: "Nueva escuela en repertorio",
+    description: "Escuela en Vallarta",
+    location: "Vallarta, Jalisco",
+    date: "20/24",
+  },
+  {
+    title: "Nuevo centro de salud",
+    description: "Centro médico en Puerto Vallarta",
+    location: "Puerto Vallarta, Jalisco",
+    date: "15/11",
+  },
+  {
+    title: "Inauguración de biblioteca",
+    description: "Biblioteca digital en la ciudad",
+    location: "Ciudad de México",
+    date: "12/12",
+  },
+];
+export const companyData = [
+  {
+    logo: "/images/bkg.png",
+    companyName: "Burger King",
+    location: "Morelia, Zapopan",
+    industry: "Alimentos",
+    date: "23/11",
+  },
+  {
+    logo: "/images/pizaHud.jpeg",
+    companyName: "Pizza Hut",
+    location: "Monterrey, Zapopan",
+    industry: "Alimentos",
+    date: "22/11",
+  },
+  {
+    logo: "/images/vvvW.png",
+    companyName: "Tecnologico Maorio Molina Pasquel y enriquez",
+    location: "Zapopan, Jalisco",
+    industry: "Educación",
+    date: "Fundada en 2018",
   },
 ];

@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         pathname: "/yefrasoft/image/upload/**",
       },
       {
+        protocol: "https",
+        hostname: "yefrasoft.github.io",
+        pathname: "/direccionCorrectav2/**",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
         pathname: "/**",

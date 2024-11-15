@@ -6,7 +6,7 @@ import BaseCard from "./baseCard";
 export default function BlogCard({ posts }: blogProps) {
   return (
     <div className="container mx-auto px-1 py-4">
-      <h1 className="text-3xl font-bold mb-8 text-center">
+      <h1 className="text-center text-2xl font-bold text-patina-500 mb-3">
         Donaciones del mes
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

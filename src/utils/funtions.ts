@@ -99,3 +99,75 @@ export const vUsr = (Usr: string) => {
     return false;
   }
 };
+export const privacyPolicyMarkdown = `
+# Política de Privacidad y Manejo de Datos Personales
+
+## 1. Información General
+
+### 1.1 Datos Recolectados
+En nuestra organización recolectamos los siguientes datos personales de nuestros usuarios:
+
+- **Personas físicas**: Nombre, RFC, dirección completa, régimen fiscal.
+- **Empresas**: Los datos anteriores más el acta constitutiva.
+- **Datos fiscales**: Información necesaria para la facturación y cumplimiento de nuestras obligaciones fiscales.
+- **Datos de sesión**: Información asociada al acceso a nuestra plataforma, como IP, cookies y otros identificadores.
+
+### 1.2 Métodos de Recolección
+Recopilamos estos datos de las siguientes formas:
+- **Formulario web**: Los usuarios proporcionan estos datos al completar formularios en línea dentro de nuestro sitio web.
+
+## 2. Uso de los Datos
+
+### 2.1 Finalidad del Uso
+Los datos personales que recolectamos son utilizados exclusivamente para los siguientes fines:
+
+- **Fines fiscales**: Para realizar la facturación y cumplir con nuestras obligaciones fiscales.
+- **Fines estadísticos**: Para generar estadísticas internas y mejorar nuestros procesos.
+
+### 2.2 Limitación en el Uso
+Los datos personales recolectados se utilizan únicamente dentro de nuestra organización y no con fines comerciales ni de distribución externa.
+
+## 3. Compartir o Transferir Datos
+
+### 3.1 Compartición de Datos
+No compartimos ni vendemos los datos personales de nuestros usuarios a terceros. Los datos se mantienen confidenciales y son usados exclusivamente por nuestra organización para los fines descritos.
+
+### 3.2 Almacenamiento de Datos
+Los datos son almacenados en servidores web seguros y protegidos con acceso restringido.
+
+## 4. Seguridad de los Datos
+
+Para garantizar la protección de los datos personales que recolectamos, implementamos las siguientes medidas de seguridad:
+
+- **Cifrado AES**: Todos los datos sensibles son cifrados utilizando algoritmos de cifrado avanzados (AES).
+- **Tokens de acceso**: Utilizamos tokens para validar sesiones y proteger la integridad de los datos.
+- **Acceso privado**: El acceso a los datos está restringido a personal autorizado únicamente.
+
+## 5. Derechos de los Usuarios
+
+### 5.1 Acceso y Control
+Los usuarios tienen derecho a acceder, corregir o eliminar sus datos personales en cualquier momento a través de nuestra plataforma. Para ello, pueden realizar las acciones directamente desde su cuenta de usuario.
+
+### 5.2 Revocación de Consentimiento
+No contamos con un mecanismo específico para revocar el consentimiento, ya que el manejo de datos se limita a lo descrito en esta política.
+
+## 6. Retención de Datos
+
+Los datos personales se conservarán de manera indefinida, en la medida en que sean necesarios para cumplir con los fines establecidos en esta política.
+
+## 7. Uso de Cookies y Tecnologías Similares
+
+Nuestro sitio web utiliza **cookies** y tecnologías similares para gestionar la sesión de los usuarios y mejorar la experiencia de navegación. Las cookies se utilizan exclusivamente para fines de gestión de sesión y no recogen información personal adicional.
+
+## 8. Modificaciones a la Política de Privacidad
+
+Cualquier cambio o actualización en esta política de privacidad será comunicado a los usuarios a través de correo electrónico. Es responsabilidad de los usuarios revisar periódicamente esta política para estar informados de cualquier modificación.
+
+## 9. Contacto
+
+Si tienes preguntas sobre esta política o sobre el manejo de tus datos personales, puedes contactarnos a través de los siguientes medios:
+
+- **Formulario de contacto**: Disponible en nuestro sitio web.
+- **Teléfono**: 3334410687
+- **Correo electrónico**: tu-email@dominio.com
+`;

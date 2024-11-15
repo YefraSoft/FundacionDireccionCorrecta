@@ -179,8 +179,10 @@ export interface dataAthResponse {
   isVeryfy: string;
 }
 export interface asideDonation {
-  donorGoal: number;
-  donorProyet: number;
-  totalFondsToday: number;
-  totalFonds: number;
+  projectFunds: number; // Fondos acumulados para proyectos
+  donationFunds: number; // Fondos acumulados para donaciones
+  goalAmountDonation: number; // Meta mensual de donaciones
+  goalAmountProject: number; // Meta mensual de proyectos
+  currentAmountDonation: number; // Monto actual de donaciones para el mes
+  currentAmountProject: number; // Monto actual de proyectos para el mes
 }

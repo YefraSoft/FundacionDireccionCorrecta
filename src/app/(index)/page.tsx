@@ -1,7 +1,6 @@
 "use client";
 import IndexCard from "@/components/cards/indexCard";
 import Header from "@/components/menus/header";
-import Footer from "@/components/navbars/footer";
 import { useState } from "react";
 import { benefitsFakeData } from "@/utils/fakeData";
 import DetailWindow from "@/components/menus/detailWindow";
@@ -60,7 +59,6 @@ export default function Index() {
           />
         )}
       </div>
-      <Footer />
     </div>
   );
 }

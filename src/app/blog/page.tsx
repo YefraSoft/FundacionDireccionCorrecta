@@ -1,4 +1,6 @@
+"use client";
 import BlogCard from "@/components/cards/blogCard";
+import ReportForm from "@/components/forms/reportForm";
 import AsideDonations from "@/components/menus/asideDonations";
 import AsideSponsors from "@/components/menus/asideSponsors";
 import CardOverflow from "@/components/menus/cardOverflow";
@@ -13,8 +15,11 @@ export default function BlogFeed() {
       <CardOverflow />
       <div className="bg-cello-50 mt-52 md:mt-24 lg:mt-96">
         <IconCards />
-        <div className="flex flex-col">
-          <div className="lg:w-1/4 bg-cello-200">
+        <div className="flex flex-col lg:flex-row">
+          <div className="lg:w-1/4 shadow-md lg:shadow-none rounded-md md:text-2xl">
+            <h1 className="text-center text-2xl font-bold text-patina-500 my-3">
+              Meta de ayuda
+            </h1>
             <OverFlowProvider>
               <AsideDonations />
             </OverFlowProvider>
@@ -22,12 +27,22 @@ export default function BlogFeed() {
           <div>
             <BlogCard posts={blogPosts} />
           </div>
-          <div className="lg:w-1/4">
+          <div className="lg:w-1/4 md:text-2xl">
+            <h1 className="text-center text-2xl font-bold text-patina-500 my-3">
+              Nuestros afiliados
+            </h1>
             <AsideSponsors />
           </div>
         </div>
+        <section className="flex items-center justify-center w-full h-full">
+          <div className="w-2/4">
+            <h2 className="text-lg text-center mb-1 font-light mt-2">
+              Formulario de Reportes
+            </h2>
+            <ReportForm />
+          </div>
+        </section>
       </div>
-      <div className="h-48 text-center ">FOOTHER</div>
     </div>
   );
 }
