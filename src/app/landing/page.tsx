@@ -1,20 +1,10 @@
-"use client"
 import Image from "next/image";
 import { staticAssets } from "@/assets/staticAssets";
 import MainForm from "@/components/forms/mainForm";
-import ButtonIcon from "@/components/menus/buttonIcon";
-import { buttonsVariantsExit } from "@/utils/funtions";
 
 export default function Page() {
   return (
     <div className="flex flex-col-reverse h-lvh lg:flex-row p-1 bg-gray-50">
-      <div className="relative top-4 z-50 left-28 lg:left-64">
-        <ButtonIcon
-          icon="exit"
-          variants={buttonsVariantsExit}
-          onClick={() => window.history.back()}
-        />
-      </div>
       <div className="flex flex-col px-5 mt-2 md:mt-0 h-full md:px-5 lg:w-1/3 items-center justify-center lg:rounded-l-md border">
         <Image
           alt="landigIMG"

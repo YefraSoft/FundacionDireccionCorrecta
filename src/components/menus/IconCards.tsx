@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { getVisibleIconsCount } from "@/utils/funtions";
-import { icons } from "@/utils/fakeData";
+import { icons } from "@/assets/staticAssets";
 
 export default function IconCards() {
   const [currentIcons, setCurrentIcons] = useState(icons);

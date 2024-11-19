@@ -176,6 +176,8 @@ export const blogPosts: dataPost[] = [
   },
 ];
 
+
+//GOOD
 export const ProductBranch: branchsProducts[] = [
   {
     branchID: 1,
@@ -317,6 +319,7 @@ export const ProductBranch: branchsProducts[] = [
   },
 ];
 
+//GOOD
 export const attendantsBranchs: attendantsBranch[] = [
   {
     branchID: "1",
@@ -358,18 +361,6 @@ export const attendantsBranchs: attendantsBranch[] = [
       { name: "Claudia Romero", shift: 2 },
     ],
   },
-];
-
-export const icons = [
-  { icon: "/images/bkg.png" },
-  { icon: "/images/coppel.png" },
-  { icon: "/images/dominos.png" },
-  { icon: "/images/flexy.png" },
-  { icon: "/images/itka.jpg" },
-  { icon: "/images/liverpool.png" },
-  { icon: "/images/pizaHud.jpeg" },
-  { icon: "/images/rpc.webp" },
-  { icon: "/images/vvvW.png" },
 ];
 
 export const asideDonationData: asideDonation = {

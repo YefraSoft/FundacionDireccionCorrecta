@@ -56,3 +56,15 @@ export const pagesIndex = [
     url: "/landing",
   },
 ];
+
+export const icons = [
+  { icon: "/images/bkg.png" },
+  { icon: "/images/coppel.png" },
+  { icon: "/images/dominos.png" },
+  { icon: "/images/flexy.png" },
+  { icon: "/images/itka.jpg" },
+  { icon: "/images/liverpool.png" },
+  { icon: "/images/pizaHud.jpeg" },
+  { icon: "/images/rpc.webp" },
+  { icon: "/images/vvvW.png" },
+];

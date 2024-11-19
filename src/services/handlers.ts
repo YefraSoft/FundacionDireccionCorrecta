@@ -99,7 +99,7 @@ export async function handleSubmitReg(
   try {
     const newReg: userCredentials = { user, password, email, role: rol };
     const status = await createCredentials(newReg);
-    if (status === 200) router.push(`/sessions/${rol}`);
+    if (status === 201) router.push(`/dashboard/${rol.toLocaleLowerCase()}`);
   } catch (e) {
     console.error("Error en el registro:", e);
   }
@@ -125,12 +125,10 @@ export const handleSubmitLog = async (
       const log: userCredentials = isEmail
         ? { user: "", email: indety, password } // Proporcionamos `user` vacío cuando se usa `email`.
         : { user: indety, password };
-  
+
+      console.log(log);
       const response = await loggin(log);
-      console.log(response);
-      
-      // Redirigir tras login exitoso (ajusta la ruta según sea necesario)
-      router.push(`/sessions/${response.isVerified}`);
+      router.push(`/dashboard/${response.role.toLowerCase}`);
     } catch (error) {
       console.error("Error en el inicio de sesión:", error);
     }

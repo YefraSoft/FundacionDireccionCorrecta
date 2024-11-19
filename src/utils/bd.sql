@@ -1,7 +1,5 @@
 DROP DATABASE IF EXISTS sinhambre;
-
 CREATE DATABASE sinhambre;
-
 USE sinhambre;
 
 -- DATOS PARA FACTURACION
@@ -68,29 +66,14 @@ CREATE TABLE attendant (
 -- SUCURSALES
 CREATE TABLE branches (
     branch_id INT PRIMARY KEY AUTO_INCREMENT, -- ID UNICO DE LA SUCURSAL
+    branches_user VARCHAR(50),
     branch_name VARCHAR(150) NOT NULL, -- NOMBRE DE LA SUCURSAL
     company_name VARCHAR(150) NOT NULL, -- RELACION CON EMPRESA (RAZON SOCIAL)
     address VARCHAR(150) NOT NULL, -- DIRECCION DE LA SUCURSAL
     attendant_id INT NOT NULL, -- RELACION CON ENCARGADO
+    FOREIGN KEY (branches_user) REFERENCES credentials (user),
     FOREIGN KEY (company_name) REFERENCES company (company_name), -- RELACION CON EMPRESA
     FOREIGN KEY (attendant_id) REFERENCES attendant (attendant_id) -- RELACION CON ENCARGADO
-);
-
--- DONACIONES
-CREATE TABLE donations (
-    donation_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, -- ID DE DONACION
-    company_name VARCHAR(150), -- EMPRESA RELACIONADA
-    sponsor_curp VARCHAR(18), -- PATROCINADOR RELACIONADO
-    destine_of_donation ENUM('PROJECT', 'REASON'), -- DESTINO DE LA DONACION
-    amount DECIMAL(10, 2), -- MONTO DE LA DONACION
-    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- FECHA DE CREACION
-    payment_method ENUM(
-        'DEBIT_CARD',
-        'CREDIT_CARD',
-        'CASH'
-    ), -- METODO DE PAGO
-    FOREIGN KEY (company_name) REFERENCES company (company_name), -- RELACION CON EMPRESA
-    FOREIGN KEY (sponsor_curp) REFERENCES sponsor (curp) -- RELACION CON PATROCINADOR
 );
 
 -- FACTURAS
@@ -168,15 +151,23 @@ CREATE TABLE products (
     FOREIGN KEY (branch_id) REFERENCES branches (branch_id) -- RELACION CON SUCURSAL
 );
 
+-- FONDOS DISPONIBLES
+CREATE TABLE available_funds (
+    branch_id INT NOT NULL, -- ID DE SUCURSAL
+    calc_day TIMESTAMP DEFAULT CURRENT_TIMESTAMP PRIMARY KEY, -- DIA DEL CALCULO DE FONDOS
+    available_funds DECIMAL(30, 2), -- FONDOS DISPONIBLES
+    FOREIGN KEY (branch_id) REFERENCES branches (branch_id) -- RELACION CON SUCURSAL
+);
+
 -- PETICIONES DE PAGO
 CREATE TABLE payments_requests (
     folio CHAR(36) PRIMARY KEY DEFAULT(UUID()), -- FOLIO DE LA SOLICITUD
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- FECHA DE CREACION
-    image_url TEXT NOT NULL, -- URL DE IMAGEN
-    applicant_branch INT NOT NULL, -- SOLICITANTE 
+    image_url TEXT NOT NULL, -- URL DE IMAGEN 
+    donation INT NOT NULL, -- SOLICITANTE 
     amount DECIMAL(10, 2) NOT NULL, -- MONTO
     description VARCHAR(255) NOT NULL, -- DESCRIPCION DE LA SOLICITUD
-    FOREIGN KEY (applicant_branch) REFERENCES branches (branch_id) -- RELACION CON SUCURSAL
+    FOREIGN KEY (donation) REFERENCES donations (donations) -- RELACION CON SUCURSAL
 );
 
 -- DISPERSIONES
@@ -193,12 +184,21 @@ CREATE TABLE payments (
     FOREIGN KEY (pay_request_folio) REFERENCES payments_requests (folio) -- RELACION CON SOLICITUD DE PAGO
 );
 
--- FONDOS DISPONIBLES
-CREATE TABLE available_funds (
-    branch_id INT NOT NULL, -- ID DE SUCURSAL
-    calc_day TIMESTAMP DEFAULT CURRENT_TIMESTAMP PRIMARY KEY, -- DIA DEL CALCULO DE FONDOS
-    available_funds DECIMAL(30, 2), -- FONDOS DISPONIBLES
-    FOREIGN KEY (branch_id) REFERENCES branches (branch_id) -- RELACION CON SUCURSAL
+-- DONACIONES
+CREATE TABLE donations (
+    donation_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, -- ID DE DONACION
+    company_name VARCHAR(150), -- EMPRESA RELACIONADA
+    sponsor_curp VARCHAR(18), -- PATROCINADOR RELACIONADO
+    destine_of_donation ENUM('PROJECT', 'REASON'), -- DESTINO DE LA DONACION
+    amount DECIMAL(10, 2), -- MONTO DE LA DONACION
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- FECHA DE CREACION
+    payment_method ENUM(
+        'DEBIT_CARD',
+        'CREDIT_CARD',
+        'CASH'
+    ), -- METODO DE PAGO
+    FOREIGN KEY (company_name) REFERENCES company (company_name), -- RELACION CON EMPRESA
+    FOREIGN KEY (sponsor_curp) REFERENCES sponsor (curp) -- RELACION CON PATROCINADOR
 );
 
 -- SISTEMA DE RECOMPENSAS
@@ -234,5 +234,5 @@ CREATE TABLE benefits (
     detail_description TEXT NOT NULL, -- MARK DOUW DETALLADO
     image VARCHAR(255) NOT NULL, -- IMAGEN RELACIONADA
     bg_stile VARCHAR(255) NOT NULL, -- STYLO DE FONDO
-    for ENUM('COMPANY', 'SPONSOR'),
+    for ENUM('COMPANY', 'SPONSOR')
 );

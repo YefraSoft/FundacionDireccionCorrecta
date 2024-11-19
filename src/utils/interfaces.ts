@@ -176,7 +176,7 @@ export interface userCredentials {
 }
 export interface dataAthResponse {
   isVerified: string;
-  isVeryfy: string;
+  role: string;
 }
 export interface asideDonation {
   projectFunds: number; // Fondos acumulados para proyectos
