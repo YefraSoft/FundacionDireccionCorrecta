@@ -5,7 +5,7 @@ import { userCredentials, dataAthResponse } from "@/utils/interfaces";
 export async function createCredentials(createCredentials: userCredentials) {
   try {
     const response = await axios.post(
-      "http://localhost:8080/api/auth/register",
+      "https://direccioncorrecta.up.railway.app/api/auth/register",
       createCredentials,
       {
         withCredentials: true,
@@ -29,7 +29,7 @@ export async function createCredentials(createCredentials: userCredentials) {
 export async function loggin(createCredentials: userCredentials): Promise<dataAthResponse> {
   try {
     const response = await axios.post(
-      "http://localhost:8080/api/auth/login",
+      "https://direccioncorrecta.up.railway.app/api/auth/login",
       createCredentials,
       {
         withCredentials: true,
