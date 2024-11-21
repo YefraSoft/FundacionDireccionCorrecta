@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "github.com",
-        pathname: "YefraSoft/direccionCorrectav2/blob/master/public/**",
+        pathname: "YefraSoft/FundacionDireccionCorrecta/**",
       },
     ],
   },

@@ -58,13 +58,13 @@ export const pagesIndex = [
 ];
 
 export const icons = [
-  { icon: "/images/bkg.png" },
-  { icon: "/images/coppel.png" },
-  { icon: "/images/dominos.png" },
-  { icon: "/images/flexy.png" },
-  { icon: "/images/itka.jpg" },
-  { icon: "/images/liverpool.png" },
-  { icon: "/images/pizaHud.jpeg" },
-  { icon: "/images/rpc.webp" },
-  { icon: "/images/vvvW.png" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/blob/master/public/images/bkg.png?raw=true" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/coppel.png" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/dominos.png" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/flexy.png" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/itka.jpg" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/liverpool.png" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/pizaHud.jpeg" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/rpc.webp" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/vvvW.png" },
 ];
