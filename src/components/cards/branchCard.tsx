@@ -10,6 +10,8 @@ import ButtonIcon from "../menus/buttonIcon";
 
 export default function BranchCard() {
   const [activeBranch, setActiveBranch] = useState<branchData | null>();
+
+  
   return (
     <div className="relative pb-1">
       <span className="relative text-havelockblue-700 font-semibold text-lg text-center">

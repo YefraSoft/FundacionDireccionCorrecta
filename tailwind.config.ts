@@ -77,8 +77,20 @@ const config: Config = {
             transform: "scale(1.2)",
           },
         },
+        xPulse: {
+          "0%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.3",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
       },
       animation: {
+        diagonalPulse: "xPulse 2s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
         bounceslow: "bounce 3s infinite",
         heartbeat: "heartbeat 3s ease-in-out infinite",

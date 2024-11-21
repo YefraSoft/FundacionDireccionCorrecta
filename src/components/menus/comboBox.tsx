@@ -95,7 +95,7 @@ export default function ComboBox({
                   <span className="font-bold text-sm text-gray-700 mb-1">
                     {branch.branchName}
                   </span>
-                  {branch.attendants.map((attendant, index) => (
+                  {branch.attendatsDTOs.map((attendant, index) => (
                     <div
                       key={index}
                       onClick={() => {

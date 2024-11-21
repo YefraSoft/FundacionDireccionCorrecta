@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { handleSubmitReg } from "@/services/handlers";
 import InputTypeButton from "../imputs/imputTypeButton";
 import InputTypeEmail from "../imputs/imputTypeEmail";
 import InputTypePass from "../imputs/inputTypePass";
 import Combobox from "@/components/menus/comboBox";
-import { attendantsBranchs } from "@/utils/fakeData";
+import { attendantsBranchs as fake } from "@/utils/fakeData";
+import { getBranchesWidthAttendants } from "@/services/dataService";
+import { attendantsBranch } from "@/utils/interfaces";
 
 export default function RegisterBranch() {
   const router = useRouter();
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [attendants, setAttendants] = useState<attendantsBranch[]>();
+
+  useEffect(() => {
+    getBranchesWidthAttendants()
+      .then((attendantsBranchs: attendantsBranch[]) => {
+        setAttendants(attendantsBranchs);
+      })
+      .catch(() => {
+        setAttendants(fake);
+      });
+  }, []);
+
+
   return (
     <form
       className="flex flex-col my-2 w-64"
@@ -24,7 +39,7 @@ export default function RegisterBranch() {
         placeholder="Seleccione el tipo de cuenta"
         selectedItem={user}
         setSelectedItem={setUser}
-        attendants={attendantsBranchs}
+        attendants={attendants}
       />
       {/*PASSWORD */}
       <InputTypePass password={password} setPassword={setPassword} />

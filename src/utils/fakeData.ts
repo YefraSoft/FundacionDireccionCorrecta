@@ -176,144 +176,18 @@ export const blogPosts: dataPost[] = [
   },
 ];
 
-
 //GOOD
 export const ProductBranch: branchsProducts[] = [
   {
-    branchID: 1,
-    branchName: "Aviacion",
+    branchID: 0,
+    branchName: "Loading",
     branchProducts: [
       {
         id: 1,
-        class: "Electrónica",
-        productName: "Laptop X",
-        productDescription: "Laptop de alto rendimiento con 16GB RAM",
-        productPrice: 15000,
-      },
-      {
-        id: 2,
-        class: "Electrónica",
-        productName: "Smartphone Y",
-        productDescription: "Teléfono de última generación con cámara de 108MP",
-        productPrice: 12000,
-      },
-      {
-        id: 3,
-        class: "Electrónica",
-        productName: "Tablet Z",
-        productDescription:
-          "Tablet con pantalla de 10 pulgadas y 64GB de almacenamiento",
-        productPrice: 8000,
-      },
-    ],
-  },
-  {
-    branchID: 2,
-    branchName: "Centro",
-    branchProducts: [
-      {
-        id: 11,
-        class: "Hogar",
-        productName: "Aspiradora K",
-        productDescription: "Aspiradora con filtro HEPA y tecnología ciclónica",
-        productPrice: 2500,
-      },
-      {
-        id: 12,
-        class: "Hogar",
-        productName: "Refrigerador L",
-        productDescription:
-          "Refrigerador de doble puerta con tecnología inverter",
-        productPrice: 10000,
-      },
-      {
-        id: 13,
-        class: "Hogar",
-        productName: "Lavadora M",
-        productDescription: "Lavadora automática de carga superior",
-        productPrice: 6000,
-      },
-    ],
-  },
-  {
-    branchID: 3,
-    branchName: "Norte",
-    branchProducts: [
-      {
-        id: 21,
-        class: "Deportes",
-        productName: "Bicicleta N",
-        productDescription: "Bicicleta de montaña con suspensión doble",
-        productPrice: 7500,
-      },
-      {
-        id: 22,
-        class: "Deportes",
-        productName: "Pelota de fútbol",
-        productDescription:
-          "Pelota de fútbol profesional con costura reforzada",
-        productPrice: 1200,
-      },
-      {
-        id: 23,
-        class: "Deportes",
-        productName: "Ruedas para patineta",
-        productDescription: "Juego de ruedas para patineta de alta resistencia",
-        productPrice: 400,
-      },
-    ],
-  },
-  {
-    branchID: 4,
-    branchName: "Sur",
-    branchProducts: [
-      {
-        id: 31,
-        class: "Ropa",
-        productName: "Playera S",
-        productDescription: "Playera de algodón 100% con estampado",
-        productPrice: 250,
-      },
-      {
-        id: 32,
-        class: "Ropa",
-        productName: "Pantalón T",
-        productDescription: "Pantalón de mezclilla ajustado",
-        productPrice: 500,
-      },
-      {
-        id: 33,
-        class: "Ropa",
-        productName: "Chaqueta U",
-        productDescription: "Chaqueta impermeable para invierno",
-        productPrice: 1200,
-      },
-    ],
-  },
-  {
-    branchID: 5,
-    branchName: "Este",
-    branchProducts: [
-      {
-        id: 41,
-        class: "Juguetes",
-        productName: "Rompecabezas X",
-        productDescription: "Rompecabezas de 1000 piezas",
-        productPrice: 300,
-      },
-      {
-        id: 42,
-        class: "Juguetes",
-        productName: "Figura de acción Y",
-        productDescription: "Figura de acción coleccionable con accesorios",
-        productPrice: 800,
-      },
-      {
-        id: 43,
-        class: "Juguetes",
-        productName: "Pelota Z",
-        productDescription: "Pelota de goma para jugar en exteriores",
-        productPrice: 100,
+        productClass: "Loading",
+        productName: "Loading",
+        productDescription: "Loaging",
+        productPrice: 0,
       },
     ],
   },
@@ -322,43 +196,10 @@ export const ProductBranch: branchsProducts[] = [
 //GOOD
 export const attendantsBranchs: attendantsBranch[] = [
   {
-    branchID: "1",
-    branchName: "Aviacion",
-    attendants: [
-      { name: "Carlos Martínez", shift: 1 },
-      { name: "Ana González", shift: 2 },
-    ],
-  },
-  {
-    branchID: "2",
-    branchName: "Centro",
-    attendants: [
-      { name: "Luis Hernández", shift: 1 },
-      { name: "María López", shift: 2 },
-    ],
-  },
-  {
-    branchID: "3",
-    branchName: "Norte",
-    attendants: [
-      { name: "Miguel Ríos", shift: 1 },
-      { name: "Elena Gómez", shift: 2 },
-    ],
-  },
-  {
-    branchID: "4",
-    branchName: "Sur",
-    attendants: [
-      { name: "José Sánchez", shift: 1 },
-      { name: "Lucía Rivera", shift: 2 },
-    ],
-  },
-  {
-    branchID: "5",
-    branchName: "Este",
-    attendants: [
-      { name: "Fernando Pérez", shift: 1 },
-      { name: "Claudia Romero", shift: 2 },
+    branchID: "0",
+    branchName: "Loading",
+    attendatsDTOs: [
+      { attendantId: 0, name: "Loading", lastName: "Loading", shift: 0 },
     ],
   },
 ];

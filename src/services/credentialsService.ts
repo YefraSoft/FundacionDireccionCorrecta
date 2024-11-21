@@ -1,11 +1,11 @@
 import axios from "axios";
-import {  setCookie } from 'typescript-cookie'
+import { setCookie } from "typescript-cookie";
 import { userCredentials, dataAthResponse } from "@/utils/interfaces";
 
 export async function createCredentials(createCredentials: userCredentials) {
   try {
     const response = await axios.post(
-      "https://direccioncorrecta.up.railway.app/api/register",
+      process.env.BACK_URL + "/register",
       createCredentials,
       {
         withCredentials: true,
@@ -26,10 +26,12 @@ export async function createCredentials(createCredentials: userCredentials) {
   }
 }
 
-export async function loggin(createCredentials: userCredentials): Promise<dataAthResponse> {
+export async function loggin(
+  createCredentials: userCredentials
+): Promise<dataAthResponse> {
   try {
     const response = await axios.post(
-      "https://direccioncorrecta.up.railway.app/api/login",
+      process.env.BACK_URL + "/login",
       createCredentials,
       {
         withCredentials: true,

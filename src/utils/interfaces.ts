@@ -26,24 +26,30 @@ export interface dataPost {
   description: string;
   imageUrl: string;
 }
+export interface products {
+  id: number;
+  productClass: string;
+  productName: string;
+  productDescription: string;
+  productPrice: number;
+}
 export interface branchsProducts {
   branchID: number;
   branchName: string;
-  branchProducts: {
-    id: number;
-    class: string;
-    productName: string;
-    productDescription: string;
-    productPrice: number;
-  }[];
+  branchProducts: products[];
 }
+
+export interface Attendant {
+  attendantId: number;
+  name: string;
+  lastName: string;
+  shift: number;
+}
+
 export interface attendantsBranch {
   branchID: string;
   branchName: string;
-  attendants: {
-    name: string;
-    shift: number;
-  }[];
+  attendatsDTOs: Attendant[];
 }
 
 /* COMPONENT INTERFACES */
@@ -117,7 +123,7 @@ export interface comboBoxProps {
   setSelectedItem: React.Dispatch<React.SetStateAction<string>>;
 }
 export interface ProductListProps {
-  branches: branchsProducts | branchsProducts[];
+  ProductBranch: branchsProducts | branchsProducts[] | [];
 }
 export interface registerFormProps {
   roles?: string | string[];

@@ -99,7 +99,11 @@ export async function handleSubmitReg(
   try {
     const newReg: userCredentials = { user, password, email, role: rol };
     const status = await createCredentials(newReg);
-    if (status === 201) router.push(`/dashboard/${rol.toLocaleLowerCase()}`);
+    if (status === 201) {
+      router.push(`/dashboard/${rol.toLocaleLowerCase()}`);
+    } else {
+      alert("Error al crear la cuenta");
+    }
   } catch (e) {
     console.error("Error en el registro:", e);
   }
@@ -113,23 +117,21 @@ export const handleSubmitForg = (e: React.FormEvent, email: string) => {
 
 // LOGIN SUBMIT
 export const handleSubmitLog = async (
-    e: React.FormEvent,
-    indety: string,
-    password: string,
-    router: AppRouterInstance
-  ) => {
-    e.preventDefault();
-    try {
-      const isEmail = vEmal(indety);
-  
-      const log: userCredentials = isEmail
-        ? { user: "", email: indety, password } // Proporcionamos `user` vacío cuando se usa `email`.
-        : { user: indety, password };
-
-      console.log(log);
-      const response = await loggin(log);
-      router.push(`/dashboard/${response.role.toLowerCase}`);
-    } catch (error) {
-      console.error("Error en el inicio de sesión:", error);
-    }
-  };
+  e: React.FormEvent,
+  indety: string,
+  password: string,
+  router: AppRouterInstance
+) => {
+  e.preventDefault();
+  try {
+    const isEmail = vEmal(indety);
+    const log: userCredentials = isEmail
+      ? { user: "", email: indety, password } // Proporcionamos `user` vacío cuando se usa `email`.
+      : { user: indety, password };
+    const response = await loggin(log);
+    router.push(`/dashboard/${response.role.toLowerCase}`);
+  } catch (error) {
+    console.error("Error en el inicio de sesión:", error);
+    alert("Error al iniciar sesión");
+  }
+};
