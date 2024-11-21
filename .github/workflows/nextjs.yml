@@ -29,8 +29,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BACK_URL: https://direccioncorrecta.up.railway.app/
+      BACK_URLRAIL: https://direccioncorrecta.up.railway.app/api
     steps:
+      - name: "sayHello"
+        run: echo "$BACK_URLRAIL"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
