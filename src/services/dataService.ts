@@ -7,8 +7,8 @@ import {
 import axios from "axios";
 
 const bkURL = process.env.BACK_URL
-  ? process.env.BACK_URL
-  : "http://localhost:8080/api";
+  ? "http://localhost:8080/api"
+  : process.env.BACK_URL;
 
 export async function getBranchesWidthAttendants() {
   try {
