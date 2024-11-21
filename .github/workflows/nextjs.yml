@@ -28,8 +28,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      BACK_URLRAIL: https://direccioncorrecta.up.railway.app/api
     steps:
       - name: "sayHello"
         run: echo "$BACK_URLRAIL"
