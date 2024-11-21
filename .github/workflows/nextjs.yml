@@ -28,6 +28,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      BACK_URL: https://direccioncorrecta.up.railway.app/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
