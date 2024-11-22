@@ -1,7 +1,9 @@
 import { validateNewPassword, vEmal, vPass, vUsr } from "@/utils/funtions";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { createCredentials, loggin } from "./credentialsService";
-import { userCredentials } from "@/utils/interfaces";
+import { reportForm, userCredentials } from "@/utils/interfaces";
+import { FormEvent } from "react";
+import { sendReport } from "./microServices";
 const emailDomains = ["hotmail.com", "gmail.com", "yahoo.com", "outlook.com"];
 
 // EMAIL
@@ -134,4 +136,27 @@ export const handleSubmitLog = async (
     console.error("Error en el inicio de sesión:", error);
     alert("Error al iniciar sesión");
   }
+};
+
+// CONTACT EMAIL
+export const handleSubmitReport = async (
+  e: FormEvent<HTMLFormElement>,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setReportData: React.Dispatch<React.SetStateAction<reportForm>>,
+  reportData: reportForm
+) => {
+  e.preventDefault();
+  setLoading(true);
+  if ((await sendReport(reportData)) == 200) {
+    alert("Reporte enviado correctamente");
+  } else {
+    alert("Error al enviar el reporte");
+  }
+  setReportData({
+    reportedBy: "",
+    reason: "",
+    details: "",
+    reportType: "PRODUCT",
+  });
+  setLoading(false);
 };

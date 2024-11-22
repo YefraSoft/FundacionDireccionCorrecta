@@ -9,7 +9,7 @@ export default function IndexCard({
   button,
 }: IndexCardProps) {
   return (
-    <div className="mb-5">
+    <div className="mb-5 md:mx-auto">
       <div
         className="absolute bg-patina-50 h-48 w-64 sm:h-52 sm:w-72 rounded-lg transform sm:-translate-x-1/4 translate-y-6 p-3 shadow-lg
       hover:shadow-xl transition-all duration-300 text-patina-800 overflow-hidden"
@@ -23,9 +23,8 @@ export default function IndexCard({
         />*/}
         <h3 className="md:text-xl font-semibold mt-2 ">{title}</h3>
         <p className="text-sm mt-2 ">{description}</p>
-
         <button
-          className="mt-2 text-sm md:text-base p-2 rounded bg-patina-400"
+          className="mt-2 text-sm md:text-base p-2 rounded bg-patina-400 text-patina-100"
           onClick={button.onClick}
         >
           Ver mas

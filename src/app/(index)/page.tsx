@@ -19,10 +19,16 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <h2 className="text-2xl font-semibold text-center my-6 col-span-1 md:col-span-2 lg:col-span-3">
-            Porque unirse como <span className="italic">Compañia</span>
+      <div className="flex flex-col items-center justify-center py-10">
+        <span className="text-2xl mb-5">¿Que es direccion correcta?</span>
+        <div className="flex items-center justify-center rounded-md bg-patina-200 h-96 w-1/2 shadow-md">
+          VIDEO
+        </div>
+      </div>
+      <div className=" mx-auto p-2 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:space-x-24">
+          <h2 className="text-2xl text-center my-6 col-span-1 lg:col-span-3">
+            Beneficios para <span className="italic">Empresas</span>
           </h2>
           {BenefitsCompapy.map((benefit) => (
             <IndexCard
@@ -35,8 +41,8 @@ export default function Index() {
               }}
             />
           ))}
-          <h2 className="text-2xl font-semibold text-center my-6 col-span-1 md:col-span-2 lg:col-span-3">
-            Porque unirse como <span className="italic">Donador</span>
+          <h2 className="text-2xl text-center my-6 col-span-1 lg:col-span-3">
+            Beneficios para <span className="italic">Personas</span>
           </h2>
           {BenefitsSponsor.map((benefit) => (
             <IndexCard

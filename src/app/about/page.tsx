@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -82,10 +83,12 @@ export default function AboutUs() {
           <div className="flex flex-col lg:flex-row justify-center items-center space-y-3 lg:space-x-6">
             {/* Miembro 2 */}
             <div className="max-w-xs">
-              <img
+              <Image
                 className="w-96 h-96 object-cover rounded-full mb-4 bg-patina-100"
                 src="/team/member2.jpg"
                 alt="Miembro del equipo"
+                width={100}
+                height={100}
               />
               <h4 className="text-lg font-bold">Jose Luis Alvarado</h4>
               <p className="text-sm text-gray-500">
@@ -94,10 +97,12 @@ export default function AboutUs() {
             </div>
             {/* Miembro 1 */}
             <div className="max-w-xs">
-              <img
+              <Image
                 className="w-96 h-96 object-cover rounded-full mb-4 bg-patina-100"
                 src="/team/member1.jpg"
                 alt="Miembro del equipo"
+                width={100}
+                height={100}
               />
               <h4 className="text-lg font-bold">Efrain Garcia</h4>
               <p className="text-sm text-gray-500">
@@ -106,10 +111,12 @@ export default function AboutUs() {
             </div>
             {/* Miembro 3 */}
             <div className="max-w-xs">
-              <img
+              <Image
                 className="w-96 h-96 object-cover rounded-full mb-4 bg-patina-100"
                 src="/team/member3.jpg"
                 alt="Miembro del equipo"
+                width={100}
+                height={100}
               />
               <h4 className="text-lg font-bold">Diego Sevilla</h4>
               <p className="text-sm text-gray-500">
@@ -138,6 +145,25 @@ export default function AboutUs() {
           <h3 className="text-2xl font-semibold text-patina-600 mb-6">
             Preguntas frecuentes
           </h3>
+        </section>
+        <section className="">
+          <span>TEST</span>
+          <form action="https://getform.io/f/bvrrmxyb" method="POST">
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="text" name="message" />
+            <input type="hidden" name="_gotcha" />
+            <input type="checkbox" name="subscribe" value="yes" />
+            <input type="hidden" name="subscribe" value="no" />
+            <input type="radio" name="gender" value="male" />
+            <input type="radio" name="gender" value="female" />
+            <input type="radio" name="gender" value="other" />
+            <select name="work-experience">
+              <option value="one-year">0-1 years</option>
+              <option value="one-five-years">1-5 years</option>
+            </select>
+            <button type="submit">Send</button>
+          </form>
         </section>
       </div>
     </div>

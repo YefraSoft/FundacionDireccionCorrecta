@@ -192,3 +192,16 @@ export interface asideDonation {
   currentAmountDonation: number; // Monto actual de donaciones para el mes
   currentAmountProject: number; // Monto actual de proyectos para el mes
 }
+export interface reportForm {
+  details: string;
+  reason: string;
+  reportType:
+    | "PRODUCT"
+    | "DONATION"
+    | "BLOG"
+    | "OTHER"
+    | "PLATFORM"
+    | "PAYMENT"
+    | "EMBEZZLEMENT";
+  reportedBy: string;
+}

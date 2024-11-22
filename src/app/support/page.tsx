@@ -1,44 +1,29 @@
 "use client";
-import { useState, ChangeEvent, FormEvent } from "react";
-
-interface ReportData {
-  details: string;
-  reason: string;
-  reportType:
-    | "PRODUCT"
-    | "DONATION"
-    | "BLOG"
-    | "OTHER"
-    | "PLATFORM"
-    | "PAYMENT"
-    | "EMBEZZLEMENT";
-  reportedBy: string;
-}
+import { handleSubmitReport } from "@/services/handlers";
+import { reportForm } from "@/utils/interfaces";
+import { useState, ChangeEvent } from "react";
 
 export default function Support() {
-  const [reportData, setReportData] = useState<ReportData>({
+  const [loading, setLoading] = useState<boolean>(false);
+  const [reportData, setReportData] = useState<reportForm>({
     details: "",
     reason: "",
-    reportType: "PRODUCT",
+    reportType: "BLOG",
     reportedBy: "",
   });
 
-  const handleChange = (
+  const reportDataOnchage = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setReportData({ ...reportData, [name]: value });
   };
 
-  const handleSubmitReport = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Aquí iría la lógica para enviar el reporte al servidor o base de datos
-    console.log("Reporte enviado:", reportData);
-  };
-
   return (
     <div className="min-h-screen bg-patina-50 flex flex-col justify-center items-center pt-20">
-      <span className="text-rose-500">BERSION BETA- Solo funcionan los comentarios</span>
+      <span className="text-rose-500">
+        BERSION BETA- Solo funcionan los comentarios
+      </span>
       <div className="bg-cello-50 shadow-lg rounded-lg p-6 w-full max-w-5xl">
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-cello-800 mb-4">
@@ -55,7 +40,6 @@ export default function Support() {
                 Para eso, necesitamos personas como tú, que quieran ayudarnos
                 levantando las manos como auditores voluntarios.
                 <a href="#" className="text-blue-500">
-                  {" "}
                   REGÍSTRATE AQUÍ
                 </a>
               </p>
@@ -63,7 +47,7 @@ export default function Support() {
             <li className="text-patina-700">
               <strong>¿Cómo puedo registrarme?</strong>
               <p>
-                Puedes registrarte{" "}
+                Puedes registrarte
                 <a href="#" className="text-blue-500">
                   AQUÍ
                 </a>
@@ -75,7 +59,12 @@ export default function Support() {
           <h2 className="text-2xl font-semibold text-cello-800 mb-4">
             Envíanos tu comentario
           </h2>
-          <form className="space-y-4">
+          <form
+            className="space-y-4"
+            onSubmit={(e) =>
+              handleSubmitReport(e, setLoading, setReportData, reportData)
+            }
+          >
             <input
               placeholder="Motivo"
               className="w-full p-2 border border-cello-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-cello-500"
@@ -95,7 +84,12 @@ export default function Support() {
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Formulario de Reportes
           </h2>
-          <form onSubmit={handleSubmitReport} className="space-y-4">
+          <form
+            className="space-y-4"
+            onSubmit={(e) =>
+              handleSubmitReport(e, setLoading, setReportData, reportData)
+            }
+          >
             <div>
               <label htmlFor="reportedBy" className="block text-cello-700">
                 Tu nombre
@@ -105,7 +99,7 @@ export default function Support() {
                 id="reportedBy"
                 name="reportedBy"
                 value={reportData.reportedBy}
-                onChange={handleChange}
+                onChange={reportDataOnchage}
                 className="w-full p-4 border border-cello-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-cello-500"
                 required
               />
@@ -119,7 +113,7 @@ export default function Support() {
                 id="reason"
                 name="reason"
                 value={reportData.reason}
-                onChange={handleChange}
+                onChange={reportDataOnchage}
                 className="w-full p-4 border border-cello-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-cello-500"
                 required
               />
@@ -132,7 +126,7 @@ export default function Support() {
                 id="details"
                 name="details"
                 value={reportData.details}
-                onChange={handleChange}
+                onChange={reportDataOnchage}
                 placeholder="Especifica los detalles de tu reporte..."
                 className="w-full p-4 border border-cello-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-cello-500"
                 rows={4}
@@ -147,7 +141,7 @@ export default function Support() {
                 id="reportType"
                 name="reportType"
                 value={reportData.reportType}
-                onChange={handleChange}
+                onChange={reportDataOnchage}
                 className="w-full p-4 border border-cello-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-cello-500"
                 required
               >
@@ -162,9 +156,37 @@ export default function Support() {
             </div>
             <button
               type="submit"
-              className="w-full bg-rose-500 text-white px-6 py-2 rounded-lg hover:bg-rose-600 transition"
+              disabled={loading}
+              className="w-full px-6 py-2 rounded-lg bg-cello-500 text-cello-50
+               hover:bg-sky-600 cursor-pointer transition duration-200 disabled:bg-cello-800 disabled:cursor-wait"
             >
-              Enviar Reporte
+              {loading ? (
+                <span className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin h-5 w-5 mr-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="none"
+                      d="M4 12a8 8 0 0116 0"
+                      strokeWidth="4"
+                    ></path>
+                  </svg>
+                  Enviando...
+                </span>
+              ) : (
+                "Enviar Reporte"
+              )}
             </button>
           </form>
         </div>

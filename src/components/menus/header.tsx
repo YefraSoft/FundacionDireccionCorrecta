@@ -1,9 +1,14 @@
 import Image from "next/image";
 import ButtonIcon from "./buttonIcon";
 import { staticAssets } from "@/assets/staticAssets";
-import { buttonsVariantsIndex, buttonsVariantsMP } from "@/utils/funtions";
+import { buttonsVariantsMP } from "@/utils/funtions";
 
 export default function Header() {
+  const buttonsVariantsIndex = {
+    bgColror: "bg-patina-200",
+    textColror: "text-patina-800 mt-2",
+    hoverColor: "hover:bg-patina-300",
+  };
   return (
     <div className="flex flex-col items-center justify-center bg-patina-400 h-[80svh]">
       <Image
@@ -22,9 +27,10 @@ export default function Header() {
       <div className="flex flex-col absolute w-fit lg:w-1/2 top-1/2 items-center justify-center px-2 ">
         <p className="font-thin text-justify text-patina-100">
           <span className="pl-2" />
-          Cada donación transforma vidas. Descubre cómo tú también puedes ser
-          parte de nuestras historias de éxito y construir un futuro mejor para
-          quienes más lo necesitan.
+          Ayuda a mexico con un apoyo consante a quirnes mas lo necesiatn.
+          Descubre cómo tú también puedes ser parte de este gran proyecto
+          haciendo mas grande nuestra historias de éxito y construir un futuro
+          mejor para la sociedad mexicana.
         </p>
         <div className="flex space-x-3 mt-2">
           <ButtonIcon
@@ -32,7 +38,11 @@ export default function Header() {
             variants={buttonsVariantsIndex}
             label="¡Unete ahora!"
           />
-          <ButtonIcon icon="donate" variants={buttonsVariantsMP} label="¡Dona ahora!" />
+          <ButtonIcon
+            icon="donate"
+            variants={buttonsVariantsMP}
+            label="¡Dona ahora!"
+          />
           <ButtonIcon
             icon="find"
             variants={buttonsVariantsIndex}
