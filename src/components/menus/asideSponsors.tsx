@@ -9,9 +9,11 @@ import LoadingCircle from "./loadingCircle";
 
 export default function AsideSponsors() {
   const [companys, setCompnays] = useState<companyData[]>([]);
+  const [loading, setloading] = useState<boolean>(true);
   useEffect(() => {
     getAliados().then((data: companyData[]) => {
       setCompnays(data);
+      setloading(false);
     });
   }, []);
   const buttonsVariants = {
@@ -52,7 +54,7 @@ export default function AsideSponsors() {
           <span className="font-thin text-lg text-patina-600">
             Nuestros centros de ayuda
           </span>
-          {companys.length === 0 ? (
+          {loading ? (
             <LoadingCircle />
           ) : (
             companys.map((company, index) => (
