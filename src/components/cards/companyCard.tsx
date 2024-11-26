@@ -1,19 +1,12 @@
+import { companyData } from "@/utils/interfaces";
 import Image from "next/image";
 
-interface CompanyCardProps {
-  logo: string;
-  companyName: string;
-  location: string;
-  industry: string;
-  date: string;
-}
-
-const CompanyCard: React.FC<CompanyCardProps> = ({
+const CompanyCard: React.FC<companyData> = ({
   logo,
-  companyName,
-  location,
-  industry,
-  date,
+  branch_name,
+  address,
+  business_class,
+  reg_date,
 }) => {
   return (
     <div
@@ -22,16 +15,16 @@ const CompanyCard: React.FC<CompanyCardProps> = ({
     >
       <Image
         src={logo}
-        alt={companyName}
+        alt={branch_name}
         className="w-16 h-16 rounded-full object-cover"
         width={100}
         height={100}
       />
       <div>
-        <h3 className="text-lg font-semibold text-patina-700">{companyName}</h3>
-        <p className="text-sm text-patina-500">Ubicaciónes: {location}</p>
-        <p className="text-sm text-patina-500">Industria: {industry}</p>
-        <p className="text-sm text-patina-500">Desde: {date}</p>
+        <h3 className="text-lg font-semibold text-patina-700">{branch_name}</h3>
+        <p className="text-sm text-patina-500">Ubicación: {address}</p>
+        <p className="text-sm text-patina-500">Industria: {business_class}</p>
+        <p className="text-sm text-patina-500">Desde: {reg_date}</p>
       </div>
     </div>
   );

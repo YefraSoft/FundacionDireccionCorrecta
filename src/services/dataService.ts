@@ -1,14 +1,15 @@
+import { formatAddress, formatDate } from "@/utils/funtions";
 import {
   Attendant,
   attendantsBranch,
   branchsProducts,
   products,
+  reportForm,
+  companyData,
 } from "@/utils/interfaces";
 import axios from "axios";
 
-const bkURL = process.env.BACK_URLRAIL
-  ? process.env.BACK_URLRAIL
-  : "http://localhost:8080/api";
+const bkURL = "https://direccioncorrecta.up.railway.app/api";
 
 export async function getBranchesWidthAttendants() {
   try {
@@ -50,5 +51,38 @@ export async function getBranchesWidthProducts() {
   } catch (error) {
     console.log("Error al obtener las sucursales con encargados", error);
     return [];
+  }
+}
+export async function getAliados() {
+  try {
+    const response = await axios.get(bkURL + "/getAliados");
+    const businessClassMap: { [key: string]: string } = {
+      FOOD: "Comida",
+      CLOTHING: "Ropa",
+      SCHOOL: "Escuela",
+      GROCERIES: "Abarrotes",
+    };
+    const companyData: companyData[] = response.data.map(
+      (companyData: any) => ({
+        logo: companyData.logo || "https://",
+        branch_name: companyData.branch_name,
+        address: formatAddress(companyData.address),
+        business_class: businessClassMap[companyData.businessClass],
+        reg_date: formatDate(companyData.regDate),
+      })
+    );
+
+    return companyData;
+  } catch (error) {
+    console.log("Error: ", error);
+    return [];
+  }
+}
+export async function saveReportInBD(reportData: reportForm) {
+  try {
+    const response = await axios.post(bkURL + "/saveReport", reportData);
+    return response.status;
+  } catch {
+    return 500;
   }
 }

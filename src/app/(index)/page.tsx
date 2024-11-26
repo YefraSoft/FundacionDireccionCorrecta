@@ -4,6 +4,7 @@ import Header from "@/components/menus/header";
 import { useState } from "react";
 import { benefitsFakeData } from "@/utils/fakeData";
 import DetailWindow from "@/components/menus/detailWindow";
+import Faqs from "@/components/menus/faqs";
 
 export default function Index() {
   const [showDetail, setShowDetail] = useState<string | null>(null);
@@ -19,13 +20,13 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <div className="flex flex-col items-center justify-center py-10">
+      <section className="flex flex-col items-center justify-center py-10">
         <span className="text-2xl mb-5">¿Que es direccion correcta?</span>
         <div className="flex items-center justify-center rounded-md bg-patina-200 h-96 w-1/2 shadow-md">
           VIDEO
         </div>
-      </div>
-      <div className=" mx-auto p-2 overflow-hidden">
+      </section>
+      <section className="mx-auto p-2 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:space-x-24">
           <h2 className="text-2xl text-center my-6 col-span-1 lg:col-span-3">
             Beneficios para <span className="italic">Empresas</span>
@@ -64,7 +65,10 @@ export default function Index() {
             }}
           />
         )}
-      </div>
+      </section>
+      <section className="container mx-auto p-2 overflow-hidden">
+        <Faqs />
+      </section>
     </div>
   );
 }

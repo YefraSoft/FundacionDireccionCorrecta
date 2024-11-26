@@ -169,5 +169,20 @@ Si tienes preguntas sobre esta política o sobre el manejo de tus datos personal
 
 - **Formulario de contacto**: Disponible en nuestro sitio web.
 - **Teléfono**: 3334410687
-- **Correo electrónico**: tu-email@dominio.com
+- **Correo electrónico**: yefrasoft@hotmail.com
 `;
+
+// Función para formatear la dirección
+export function formatAddress(address: string): string {
+  const parts = address.split(",");
+  return `${parts[0]} ${parts[2] || ""}`.trim();
+}
+
+// Función para formatear la fecha
+export function formatDate(date: string): string {
+  const dateObj = new Date(date);
+  const year = dateObj.getFullYear();
+  const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+  const day = String(dateObj.getDate()).padStart(2, "0");
+  return `${year}/${month}/${day}`;
+}

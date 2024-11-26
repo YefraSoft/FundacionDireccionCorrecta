@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export default function AboutUs() {
   return (
@@ -135,35 +134,11 @@ export default function AboutUs() {
             en tu proceso de registro. ¡Gracias por tu apoyo!
           </p>
           <Link
-            href="/contact"
+            href="/support"
             className="inline-block mb-6 px-6 py-3 text-white bg-patina-600 hover:bg-patina-700 rounded-lg transition duration-300"
           >
             Contáctanos
           </Link>
-        </section>
-        <section className="text-center">
-          <h3 className="text-2xl font-semibold text-patina-600 mb-6">
-            Preguntas frecuentes
-          </h3>
-        </section>
-        <section className="">
-          <span>TEST</span>
-          <form action="https://getform.io/f/bvrrmxyb" method="POST">
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <input type="text" name="message" />
-            <input type="hidden" name="_gotcha" />
-            <input type="checkbox" name="subscribe" value="yes" />
-            <input type="hidden" name="subscribe" value="no" />
-            <input type="radio" name="gender" value="male" />
-            <input type="radio" name="gender" value="female" />
-            <input type="radio" name="gender" value="other" />
-            <select name="work-experience">
-              <option value="one-year">0-1 years</option>
-              <option value="one-five-years">1-5 years</option>
-            </select>
-            <button type="submit">Send</button>
-          </form>
         </section>
       </div>
     </div>

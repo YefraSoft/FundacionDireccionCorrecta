@@ -2,10 +2,12 @@ import axios from "axios";
 import { setCookie } from "typescript-cookie";
 import { userCredentials, dataAthResponse } from "@/utils/interfaces";
 
+const bkURL = "https://direccioncorrecta.up.railway.app/api";
+
 export async function createCredentials(createCredentials: userCredentials) {
   try {
     const response = await axios.post(
-      process.env.BACK_URL + "/register",
+      bkURL + "/register",
       createCredentials,
       {
         withCredentials: true,
@@ -31,7 +33,7 @@ export async function loggin(
 ): Promise<dataAthResponse> {
   try {
     const response = await axios.post(
-      process.env.BACK_URL + "/login",
+      bkURL + "/login",
       createCredentials,
       {
         withCredentials: true,

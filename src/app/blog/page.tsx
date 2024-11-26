@@ -34,11 +34,8 @@ export default function BlogFeed() {
             <AsideSponsors />
           </div>
         </div>
-        <section className="flex items-center justify-center w-full h-full">
-          <div className="w-2/4">
-            <h2 className="text-lg text-center mb-1 font-light mt-2">
-              Formulario de Reportes
-            </h2>
+        <section className="flex items-center justify-center w-full h-full mt-2">
+          <div className="sm:w-2/4">
             <ReportForm />
           </div>
         </section>

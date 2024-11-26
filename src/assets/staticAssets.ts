@@ -58,7 +58,7 @@ export const pagesIndex = [
 ];
 
 export const icons = [
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/blob/master/public/images/bkg.png?raw=true" },
+  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/blob/master/public/images/bkg.png" },
   { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/coppel.png" },
   { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/dominos.png" },
   { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/flexy.png" },

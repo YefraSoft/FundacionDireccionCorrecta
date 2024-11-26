@@ -71,6 +71,7 @@ export interface navDashProps {
 export interface buttonProps {
   label?: string;
   icon: string;
+  loading?: boolean;
   onClick?: () => void;
   setOpen?: React.Dispatch<React.SetStateAction<string>>;
   variants?: {
@@ -204,4 +205,16 @@ export interface reportForm {
     | "PAYMENT"
     | "EMBEZZLEMENT";
   reportedBy: string;
+}
+export interface companyData {
+  logo: string;
+  branch_name: string;
+  address: string;
+  business_class: string;
+  reg_date: string;
+}
+export interface contactForm {
+  name: string;
+  email: string;
+  message: string;
 }

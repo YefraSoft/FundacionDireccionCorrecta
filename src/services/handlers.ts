@@ -1,9 +1,10 @@
 import { validateNewPassword, vEmal, vPass, vUsr } from "@/utils/funtions";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { createCredentials, loggin } from "./credentialsService";
-import { reportForm, userCredentials } from "@/utils/interfaces";
+import { contactForm, reportForm, userCredentials } from "@/utils/interfaces";
 import { FormEvent } from "react";
-import { sendReport } from "./microServices";
+import { sendComment, sendReport } from "./microServices";
+import { saveReportInBD } from "./dataService";
 const emailDomains = ["hotmail.com", "gmail.com", "yahoo.com", "outlook.com"];
 
 // EMAIL
@@ -128,7 +129,7 @@ export const handleSubmitLog = async (
   try {
     const isEmail = vEmal(indety);
     const log: userCredentials = isEmail
-      ? { user: "", email: indety, password } // Proporcionamos `user` vacío cuando se usa `email`.
+      ? { user: "", email: indety, password }
       : { user: indety, password };
     const response = await loggin(log);
     router.push(`/dashboard/${response.role.toLowerCase}`);
@@ -138,7 +139,7 @@ export const handleSubmitLog = async (
   }
 };
 
-// CONTACT EMAIL
+// CONTACT and Reporting
 export const handleSubmitReport = async (
   e: FormEvent<HTMLFormElement>,
   setLoading: React.Dispatch<React.SetStateAction<boolean>>,
@@ -152,11 +153,35 @@ export const handleSubmitReport = async (
   } else {
     alert("Error al enviar el reporte");
   }
+  if ((await saveReportInBD(reportData)) != 200) {
+    alert("Error al guadar el reporte");
+  }
   setReportData({
     reportedBy: "",
     reason: "",
     details: "",
     reportType: "PRODUCT",
+  });
+  setLoading(false);
+};
+
+export const handleSubmitComment = async (
+  e: FormEvent<HTMLFormElement>,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setData: React.Dispatch<React.SetStateAction<contactForm>>,
+  data: contactForm
+) => {
+  e.preventDefault();
+  setLoading(true);
+  if ((await sendComment(data)) == 200) {
+    alert("Nos comunicaremos lo antes posible");
+  } else {
+    alert("Error al enviar el Commentario");
+  }
+  setData({
+    name: "",
+    email: "",
+    message: "",
   });
   setLoading(false);
 };
