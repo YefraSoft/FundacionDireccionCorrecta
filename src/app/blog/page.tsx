@@ -34,7 +34,7 @@ export default function BlogFeed() {
             <AsideSponsors />
           </div>
         </div>
-        <section className="flex items-center justify-center w-full h-full mt-2">
+        <section className="flex items-center justify-center w-full h-full mt-2 mb-2">
           <div className="sm:w-2/4">
             <ReportForm />
           </div>

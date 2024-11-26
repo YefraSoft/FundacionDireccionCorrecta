@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Faqs() {
   const [showPolise, setPolise] = useState<boolean>(false);
   return (
-    <section className="mb-8 space-y-4">
+    <section className="mb-8 space-y-4 px-5">
       <h3 className="text-2xl font-semibold text-cello-800 mb-4 text-center">
         Preguntas frecuentes
       </h3>
