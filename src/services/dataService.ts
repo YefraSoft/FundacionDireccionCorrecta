@@ -6,6 +6,7 @@ import {
   products,
   reportForm,
   companyData,
+  companyDataBK,
 } from "@/utils/interfaces";
 import axios from "axios";
 
@@ -63,7 +64,7 @@ export async function getAliados() {
       GROCERIES: "Abarrotes",
     };
     const companyData: companyData[] = response.data.map(
-      (companyData: any) => ({
+      (companyData: companyDataBK) => ({
         logo: companyData.logo || "https://",
         branch_name: companyData.branch_name,
         address: formatAddress(companyData.address),

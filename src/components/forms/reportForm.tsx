@@ -1,6 +1,6 @@
 import { handleSubmitReport } from "@/services/handlers";
 import ButtonIcon from "../menus/buttonIcon";
-import { contactForm, reportForm } from "@/utils/interfaces";
+import { reportForm } from "@/utils/interfaces";
 import { useState, ChangeEvent } from "react";
 
 export default function ReportForm() {

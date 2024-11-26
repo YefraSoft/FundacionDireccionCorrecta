@@ -213,6 +213,14 @@ export interface companyData {
   business_class: string;
   reg_date: string;
 }
+
+export interface companyDataBK {
+  logo: string;
+  branch_name: string;
+  address: string;
+  businessClass: string;
+  regDate: string;
+}
 export interface contactForm {
   name: string;
   email: string;
