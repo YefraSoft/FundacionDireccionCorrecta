@@ -10,7 +10,7 @@ export const metadata = {
   robots: "index, follow",
   keywords: "donaciones",
   icons: {
-    icon: ["https://yefrasoft.github.io/public/images/favicon.ico"],
+    icon: ["https://res.cloudinary.com/yefrasoft/image/upload/v1731033576/LogoF_ygzw3y.svg"],
   },
 };
 

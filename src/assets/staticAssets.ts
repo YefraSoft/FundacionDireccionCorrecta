@@ -58,13 +58,13 @@ export const pagesIndex = [
 ];
 
 export const icons = [
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/blob/master/public/images/bkg.png" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/coppel.png" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/dominos.png" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/flexy.png" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/itka.jpg" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/liverpool.png" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/pizaHud.jpeg" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/rpc.webp" },
-  { icon: "https://github.com/YefraSoft/FundacionDireccionCorrecta/tree/master/public/images/vvvW.png" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667213/bkg_xh2r0c.png" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667213/coppel_xxhrky.png" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667213/dominos_jl0ekg.png" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667214/flexy_adakhc.png" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667214/itka_g08m52.jpg" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667214/liverpool_e08i0e.png" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667214/pizaHud_lnutgb.jpg" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667214/rpc_zhljdo.webp" },
+  { icon: "https://res.cloudinary.com/yefrasoft/image/upload/v1732667219/vvvw_kh6cde.png" },
 ];
