@@ -4,7 +4,6 @@ import {
   attendantsBranch,
   benefitData,
   branchsProducts,
-  dataPost,
 } from "./interfaces";
 
 export const branchesData = [
@@ -145,36 +144,6 @@ export const branchesData = [
   },
 ];
 
-export const blogPosts: dataPost[] = [
-  {
-    id: 1,
-    title: "The Future of Web Development",
-    description:
-      "Exploring upcoming trends and technologies shaping the web development landscape.",
-    imageUrl: staticAssets.images.KidMexican,
-  },
-  {
-    id: 2,
-    title: "Mastering React Hooks",
-    description:
-      "A deep dive into React Hooks and how they can simplify your component logic.",
-    imageUrl: staticAssets.images.colaborationHands,
-  },
-  {
-    id: 3,
-    title: "The Art of Responsive Design",
-    description:
-      "Techniques and best practices for creating truly responsive web experiences.",
-    imageUrl: staticAssets.images.schoolKids,
-  },
-  {
-    id: 4,
-    title: "Optimizing Web Performance",
-    description:
-      "Strategies to boost your website's speed and overall performance.",
-    imageUrl: staticAssets.images.blackWitheKids,
-  },
-];
 
 //GOOD
 export const ProductBranch: branchsProducts[] = [

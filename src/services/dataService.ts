@@ -7,6 +7,7 @@ import {
   reportForm,
   companyData,
   companyDataBK,
+  dataPost,
 } from "@/utils/interfaces";
 import axios from "axios";
 
@@ -85,5 +86,22 @@ export async function saveReportInBD(reportData: reportForm) {
     return response.status;
   } catch {
     return 500;
+  }
+}
+
+export async function getPostData() {
+  try {
+    const response = await axios.get(bkURL + "/payment");
+    const post: dataPost[] = response.data.map((data: dataPost) => ({
+      id: data.id,
+      title: data.title,
+      subTitle: data.subTitle,
+      description: data.description,
+      image: data.image,
+    }));
+    return post;
+  } catch (error) {
+    console.log("Error: ", error);
+    return [];
   }
 }

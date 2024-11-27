@@ -20,11 +20,15 @@ export interface singleCardData {
   subtitle: string;
   description: string;
 }
+
+/* STATIC ASSETS */
+
 export interface dataPost {
   id: number;
   title: string;
+  subTitle: string;
   description: string;
-  imageUrl: string;
+  image: string;
 }
 export interface products {
   id: number;

@@ -6,7 +6,6 @@ import AsideSponsors from "@/components/menus/asideSponsors";
 import CardOverflow from "@/components/menus/cardOverflow";
 import IconCards from "@/components/menus/IconCards";
 import OverFlowProvider from "@/components/providers/overFlowProvider";
-import { blogPosts } from "@/utils/fakeData";
 
 export default function BlogFeed() {
   return (
@@ -25,7 +24,7 @@ export default function BlogFeed() {
             </OverFlowProvider>
           </div>
           <div>
-            <BlogCard posts={blogPosts} />
+            <BlogCard />
           </div>
           <div className="lg:w-1/4 md:text-2xl">
             <h1 className="text-center text-2xl font-bold text-patina-500 my-3">
