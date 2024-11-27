@@ -140,7 +140,9 @@ export const handleSubmitLog = async (
       : { user: indety, password };
     const response = await loggin(log);
     setLoading(false);
-    router.push(`/dashboard/${response.role.toLowerCase}`);
+    const role = response.role.toLowerCase();
+    console.log(role);
+    router.push(`/dashboard/${role}`);
   } catch (error) {
     console.error("Error en el inicio de sesión:", error);
     alert("Error al iniciar sesión");
