@@ -14,6 +14,7 @@ export default function RegisterBranch() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setloading] = useState(false);
   const [attendants, setAttendants] = useState<attendantsBranch[]>();
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function RegisterBranch() {
     <form
       className="flex flex-col my-2 w-64"
       onSubmit={(e: React.FormEvent) =>
-        handleSubmitReg(e, user, password, email, "branch", router)
+        handleSubmitReg(e, user, password, email, "branch",setloading, router)
       }
     >
       {/*ROL*/}
@@ -52,6 +53,7 @@ export default function RegisterBranch() {
         email={email}
         rol={"branch"}
         lavel="Registrar"
+        loading={loading}
       />
     </form>
   );

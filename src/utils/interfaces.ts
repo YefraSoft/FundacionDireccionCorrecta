@@ -99,6 +99,7 @@ export interface disableButtonProps {
   lavel: string;
   email: string;
   rol?: string;
+  loading?: boolean;
   variant?: {
     bgColror: string;
     textColror: string;

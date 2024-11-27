@@ -9,6 +9,7 @@ import {
   UserRoundPlus,
   Plane,
 } from "lucide-react";
+import LoadingCircle from "./loadingCircle";
 
 export default function ButtonIcon({
   label,
@@ -20,7 +21,6 @@ export default function ButtonIcon({
   return (
     <button
       disabled={loading && loading}
-      
       className={`flex items-center justify-center text-sm rounded-full p-1 transition-all duration-200 shadow-md hover:shadow-lg
         ${label && "gap-1 py-2 px-1"}
         ${variants?.bgColror && variants.bgColror} ${
@@ -32,29 +32,9 @@ export default function ButtonIcon({
       onClick={onClick}
     >
       {loading ? (
-        <span className="flex items-center justify-center">
-          <svg
-            className="animate-spin h-5 w-5 mr-3"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <circle
-              className="opacity-25 text-havelockblue-400"
-              cx="12"
-              cy="12"
-              r="10"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75 text-havelockblue-600"
-              fill="none"
-              d="M4 12a8 8 0 0116 0"
-              strokeWidth="4"
-            ></path>
-          </svg>
-          Enviando...
-        </span>
+        <div className="flex items-center justify-center">
+          Enviando... <LoadingCircle />
+        </div>
       ) : (
         label
       )}

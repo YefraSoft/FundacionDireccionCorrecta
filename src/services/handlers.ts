@@ -96,19 +96,24 @@ export async function handleSubmitReg(
   password: string,
   email: string,
   rol: string,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
   router: AppRouterInstance
 ) {
   e.preventDefault();
   try {
+    setLoading(true);
     const newReg: userCredentials = { user, password, email, role: rol };
     const status = await createCredentials(newReg);
+    setLoading(false);
     if (status === 201) {
       router.push(`/dashboard/${rol.toLocaleLowerCase()}`);
     } else {
       alert("Error al crear la cuenta");
     }
   } catch (e) {
+    alert("Error al iniciar sesión");
     console.error("Error en el registro:", e);
+    setLoading(false);
   }
 }
 
@@ -123,19 +128,23 @@ export const handleSubmitLog = async (
   e: React.FormEvent,
   indety: string,
   password: string,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
   router: AppRouterInstance
 ) => {
   e.preventDefault();
   try {
+    setLoading(true);
     const isEmail = vEmal(indety);
     const log: userCredentials = isEmail
       ? { user: "", email: indety, password }
       : { user: indety, password };
     const response = await loggin(log);
+    setLoading(false);
     router.push(`/dashboard/${response.role.toLowerCase}`);
   } catch (error) {
     console.error("Error en el inicio de sesión:", error);
     alert("Error al iniciar sesión");
+    setLoading(false);
   }
 };
 

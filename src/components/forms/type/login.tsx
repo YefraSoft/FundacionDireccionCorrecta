@@ -9,12 +9,13 @@ import { handleSubmitLog } from "@/services/handlers";
 export default function LoginFom() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setloading] = useState(false);
   const router = useRouter();
   return (
     <form
       className="flex flex-col my-2 w-64"
       onSubmit={(e: React.FormEvent) =>
-        handleSubmitLog(e, user, password, router)
+        handleSubmitLog(e, user, password,setloading, router)
       }
     >
       {/*USER */}
@@ -27,7 +28,7 @@ export default function LoginFom() {
       <InputTypePass password={password} setPassword={setPassword} />
 
       {/*BOTTON */}
-      <InputTypeButton email={user} password={password} lavel="Ingresar" />
+      <InputTypeButton email={user} password={password} lavel="Ingresar" loading={loading} />
 
       {/*BOTTON SESSIONES */}
       <SessionButtons />

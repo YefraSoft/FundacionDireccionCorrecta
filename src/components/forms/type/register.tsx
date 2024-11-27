@@ -13,12 +13,13 @@ export default function RegisterForm() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [rol, setRol] = useState<string>("");
+  const [loading, setloading] = useState(false);
   const rols = ["SPONSOR", "COMPANY"];
   return (
     <form
       className="flex flex-col my-2 w-64"
       onSubmit={(e: React.FormEvent) =>
-        handleSubmitReg(e, user, password, email, rol, router)
+        handleSubmitReg(e, user, password, email, rol,setloading, router)
       }
     >
       {/*USER */}
@@ -39,6 +40,7 @@ export default function RegisterForm() {
         password={password}
         email={email}
         rol={rol}
+        loading={loading}
         lavel="Registrar"
       />
     </form>

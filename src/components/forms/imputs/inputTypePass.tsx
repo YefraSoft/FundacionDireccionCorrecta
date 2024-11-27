@@ -16,7 +16,7 @@ export default function InputTypePass({
   });
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="relative mt-1">
+    <div className="relative mt-1 mx-4 sm:mx-0">
       <input
         type={showPassword ? "text" : "password"}
         placeholder="Contraseña"

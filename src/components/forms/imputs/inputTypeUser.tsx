@@ -10,7 +10,7 @@ export default function InputTypeUser({
   const [isValid, setIsValid] = useState(false);
   const [focus, setFocus] = useState(false);
   return (
-    <div className="relative">
+    <div className="relative mx-4 sm:mx-0">
       <input
         type="text"
         placeholder={plaseHolder ? plaseHolder : "Usuario"}

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SessionButtons() {
   return (
-    <div className="flex flex-col w-full mt-1">
+    <div className="flex flex-col w-full mt-1 px-4 sm:px-0">
       <button
         className="flex w-full py-2 rounded-full transition ease-in-out justify-center items-center bg-patina-100
         duration-300 shadow-sm hover:shadow-lg font-semibold text-patina-500 gap-2"

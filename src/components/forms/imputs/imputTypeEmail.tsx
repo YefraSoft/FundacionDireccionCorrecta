@@ -15,7 +15,7 @@ export default function InputTypeEmail({
   const [isValid, setIsValid] = useState(false);
   const [focus, setFocus] = useState(false);
   return (
-    <div className="relative mt-1">
+    <div className="relative mt-1 mx-4 sm:mx-0">
       <input
         type="text"
         placeholder="Correo electrónico"
