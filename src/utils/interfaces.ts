@@ -28,6 +28,7 @@ export interface dataPost {
   title: string;
   subTitle: string;
   description: string;
+  date: string;
   image: string;
 }
 export interface products {
@@ -91,9 +92,6 @@ export interface linkProps {
   }[];
   hoverColor?: string;
   linksColor?: string;
-}
-export interface blogProps {
-  posts: dataPost[];
 }
 export interface disableButtonProps {
   user?: string;

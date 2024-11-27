@@ -95,8 +95,9 @@ export async function getPostData() {
     const post: dataPost[] = response.data.map((data: dataPost) => ({
       id: data.id,
       title: data.title,
-      subTitle: data.subTitle,
+      subTitle: formatAddress(data.subTitle),
       description: data.description,
+      data: formatDate(data.date),
       image: data.image,
     }));
     return post;

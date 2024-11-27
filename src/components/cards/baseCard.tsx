@@ -14,13 +14,14 @@ export default function BaseCard({ post }: { post: dataPost; index: number }) {
         />
       </div>
       <div className="p-4 pt-0">
-        <div className="text-xl font-semibold mb-2 text-primary leading-none tracking-tight">
+        <h2 className="text-xl font-semibold mb-2 text-primary leading-none tracking-tight">
           {post.title}
-        </div>
-        <div className="font-semibold mb-2 text-primary leading-none tracking-tight">
-          {post.subTitle}
-        </div>
-        <div className="text-sm">{post.description}</div>
+        </h2>
+        <h3 className="flex justify-between font-semibold mb-2 text-primary leading-none tracking-tight">
+          <p>{post.subTitle}</p>
+          <p>{post.date}</p>
+        </h3>
+        <p className="text-sm">{post.description}</p>
       </div>
     </div>
   );
