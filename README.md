@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fundación Dirección Correcta
 
-## Getting Started
+Bienvenido al repositorio de **Fundación Dirección Correcta**, una plataforma en desarrollo enfocada en fomentar las donaciones en México. Este proyecto tiene como objetivo conectar a instituciones con donantes para brindar apoyo a personas de bajos recursos, promoviendo la transparencia, la confianza y la accesibilidad.
 
-First, run the development server:
+## Acerca del proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Nuestro sitio web [Fundación Dirección Correcta](https://yefrasoft.github.io/FundacionDireccionCorrecta/) contiene información detallada sobre el proyecto, sus características y su progreso. Actualmente, esta versión representa una fase preliminar del desarrollo que seguirá evolucionando con el tiempo.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Características principales:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Conexión segura entre donantes e instituciones** mediante autenticación en dos pasos y cifrado de datos.
+- **Variedad de métodos de donación**, como PayPal y Mercado Pago.
+- **Blog automático** con historias de éxito y reconocimientos a los donantes más destacados.
+- **Gestión de auditorías y categorías** para garantizar la transparencia y flexibilidad del sistema.
+- **Diseño moderno** basado en Material Design para una experiencia accesible y amigable.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ¿Cómo contribuir?
 
-## Learn More
+Queremos que esta plataforma sea lo más robusta y efectiva posible, ¡y tú puedes ayudarnos a lograrlo! Si detectas errores o tienes ideas para mejorar, sigue estos pasos:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clona el repositorio:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/Yefrasoft/FundacionDireccionCorrecta.git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```
 
-## Deploy on Vercel
+2. **Crea una nueva rama**
+   ```bash
+   git checkout -b nombre_de_la_rama
+   ```
+3. **Agrega mejoras y envia tu pull request**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Notas importantes:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Este proyecto utiliza _Next.js 15_. Algunas librerías aún no se han actualizado para esta versión, por lo que es necesario instalar dependencias con la opción --legacy-peer-deps:
+
+  ```bash
+  npm install --legacy-peer-deps
+
+  ```
+
+- Revisa la documentación de los componentes y estándares de código antes de enviar tus contribuciones.
+
+## Contacto y retroalimentación
+
+Si tienes preguntas o deseas obtener más información, no dudes en contactarnos mediante los fomularios de la pagina web. Tu apoyo es esencial para que esta iniciativa logre tener un impacto significativo en las comunidades de México.
+
+## Colaboradores
+
+1. Alvarado Hernandez Jose Luis -> _Tester y Bakend_
+2. Garcia Suarez Eduardo Efrain -> _Lider de proyecto y Fronted_
+3. Sevilla Lopez Diego -> _Backend_
+
+_Este proyecto es desarrollado por Yefrasoft._
